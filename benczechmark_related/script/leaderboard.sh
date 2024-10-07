@@ -11,7 +11,9 @@ ml Python/3.10.4-GCCcore-11.3.0-bare
 # Replace with your own virtual environment
 source ~/venvs/benczechmark/bin/activate
 
-cd benczechmark-leaderboard/
+cd benczechmark-leaderboard
+
+echo $(pwd)
 
 export PYTHONPATH=$(pwd)
 

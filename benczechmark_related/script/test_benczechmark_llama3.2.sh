@@ -21,7 +21,7 @@ python -m lm_eval \
     --model_args pretrained=meta-llama/Llama-3.2-3B,tensor_parallel_size=1,dtype=bfloat16,gpu_memory_utilization=0.8,max_length=2048,normalize_log_probs=True,trust_remote_code=False,truncate_strategy=leave_description \
     --tasks benczechmark_ctkfacts_nli \
     --batch_size auto:4 \
-    --output_path results_benczechmark/eval_Llama-3.2-3B_benczechmark_ctkfacts_nli_chat_none_trunc_leave_description \
+    --output_path results_benczechmark/eval_Llama-3.2-3B_benczechmark_ctkfacts_nli_chat_none_trunc_leave_description_v2 \
     --log_samples \
     --verbosity DEBUG \
     --num_fewshot 3
