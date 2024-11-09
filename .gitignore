@@ -4,3 +4,7 @@ venv
 results_test_benczechmark
 logs_benczechmark
 results
+__pycache__
+
+#files
+tokens.py
