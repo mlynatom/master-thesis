@@ -1,11 +1,12 @@
 from transformers import AutoTokenizer, PreTrainedTokenizer, PreTrainedTokenizerFast
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk, IterableDataset
 from typing import Dict, List
+import numpy as np
 
 from tqdm import tqdm
 
 class TokenizerEvaluator:
-    def __init__(self, fertility_dataset: str = "BUT-FIT/BUT-LCC", fertility_split: str="test", parity_dataset:str = ""):
+    def __init__(self, fertility_dataset: str = "BUT-FIT/BUT-LCC", fertility_split: str="test", parity_dataset:str = "/mnt/data/factcheck/czeng20/hf_dataset", parity_split:str = "test"):
         # load evaluation datasets
         ## fertility dataset
         self.fertility_dataset = load_dataset(fertility_dataset, split=fertility_split, streaming=True)
@@ -18,11 +19,16 @@ class TokenizerEvaluator:
         self.fertility_dataset = self.fertility_dataset.map(process_fn, batched=True, remove_columns=["title", "part"])
 
         ## parity dataset
-        #self.parity_dataset = load_dataset(parity_dataset, split="train")
+        self.parity_dataset = load_from_disk(parity_dataset)[parity_split]
 
     def evaluate(self, model_ids: List[str], verbose: bool = False) -> Dict[str, Dict[str, float]]:
+        #todo preprocess model_ids to groups based on the tokenizer identity
+        unique_tokenizer_ids = self.get_unique_tokenizer_ids(model_ids)
+        if verbose:
+            print(f"Found {len(unique_tokenizer_ids)} unique tokenizers")
+
         results = {}
-        for model_id in model_ids:
+        for model_id, all_models in unique_tokenizer_ids.items():
             tokenizer = AutoTokenizer.from_pretrained(model_id)
 
             if verbose:
@@ -30,12 +36,34 @@ class TokenizerEvaluator:
 
             model_results = {
                 "fertility": self.evaluate_fertility(tokenizer),
-                "parity": self.evaluate_parity(tokenizer)
+                "parity": self.evaluate_parity(tokenizer),
+                "all_models": all_models
             }
 
             results[model_id] = model_results
 
         return results
+    
+    def get_unique_tokenizer_ids(self, model_ids: List[str]) -> Dict[str, List[str]]:
+        unique_tokenizer_ids = {}
+        for model_id in model_ids:
+            tokenizer = AutoTokenizer.from_pretrained(model_id)
+            
+            found_identical_tokenizer = False
+            for unique_id in unique_tokenizer_ids.keys():
+                unique_tokenizer = AutoTokenizer.from_pretrained(unique_id)
+
+                #compare vocabulary sizes (fast) and vocabularies (slower)
+                if tokenizer.vocab_size == unique_tokenizer.vocab_size and tokenizer.get_vocab() == unique_tokenizer.get_vocab():
+                    unique_tokenizer_ids[unique_id].append(model_id)
+                    found_identical_tokenizer = True
+                    break
+
+            if not found_identical_tokenizer:
+                unique_tokenizer_ids[model_id] = [model_id]
+
+
+        return unique_tokenizer_ids
 
     """
     (Petrov et al., 2024)
@@ -48,7 +76,36 @@ class TokenizerEvaluator:
     |t(sA)| represents its length. The ratio |t(sA)|/|t(sB)| is the premium for A relative to B.
     """
     def evaluate_parity(self, tokenizer: PreTrainedTokenizer | PreTrainedTokenizerFast) -> float:
-        return 0.0
+        def process_fn(examples):
+            cs_texts = examples["text_cs"]
+            en_texts = examples["text_en"]
+            examples["num_tokens_cs"] = [len(tokenizer.tokenize(text)) for text in cs_texts]
+            examples["num_tokens_en"] = [len(tokenizer.tokenize(text)) for text in en_texts]
+
+            return examples
+        
+        data = self.parity_dataset.map(process_fn, batched=True, remove_columns=["text_cs", "text_en"])
+
+        parity = 0
+
+        #if the dataset is streamed (IterableDataset)
+        if isinstance(data, IterableDataset):
+            for i, dat in tqdm(enumerate(data)):
+                num_tokens_cs = dat["num_tokens_cs"]
+                num_tokens_en = dat["num_tokens_en"]
+
+                current_parity = num_tokens_cs / num_tokens_en
+
+                #compute running average of parity
+                parity = parity * i / (i + 1) + current_parity / (i + 1)
+
+        else:
+            num_tokens_cs = np.array(data["num_tokens_cs"])
+            num_tokens_en = np.array(data["num_tokens_en"])
+
+            parity = float(np.average(num_tokens_cs / num_tokens_en))
+
+        return parity
 
     """
     (Ali et al., 2024)
