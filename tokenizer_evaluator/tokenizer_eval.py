@@ -62,7 +62,6 @@ class TokenizerEvaluator:
             if not found_identical_tokenizer:
                 unique_tokenizer_ids[model_id] = [model_id]
 
-
         return unique_tokenizer_ids
 
     """
