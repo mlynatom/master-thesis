@@ -4,6 +4,7 @@ import numpy as np
 from tqdm import tqdm
 from transformers import (AutoTokenizer, PreTrainedTokenizer,
                           PreTrainedTokenizerFast)
+import tiktoken
 
 from datasets import IterableDataset, load_dataset, load_from_disk
 
@@ -35,7 +36,13 @@ class TokenizerEvaluator:
 
         results = {}
         for model_id, all_models in unique_tokenizer_ids.items():
-            tokenizer = AutoTokenizer.from_pretrained(model_id)
+            try:
+                tokenizer = AutoTokenizer.from_pretrained(model_id)
+            except:
+                try:
+                    tokenizer = tiktoken.encoding_for_model(model_id)
+                except:
+                    raise ValueError("Tokenizer not found")
 
             if verbose:
                 print(f"Evaluating tokenizer {model_id}")
@@ -53,7 +60,12 @@ class TokenizerEvaluator:
     def get_unique_tokenizer_ids(self, model_ids: List[str]) -> Dict[str, List[str]]:
         unique_tokenizer_ids = {}
         for model_id in model_ids:
-            tokenizer = AutoTokenizer.from_pretrained(model_id)
+            try:
+                tokenizer = AutoTokenizer.from_pretrained(model_id)
+            except:
+                unique_tokenizer_ids[model_id] = [model_id]
+                continue
+
 
             found_identical_tokenizer = False
             for unique_id in unique_tokenizer_ids.keys():
@@ -81,14 +93,21 @@ class TokenizerEvaluator:
     |t(sA)| represents its length. The ratio |t(sA)|/|t(sB)| is the premium for A relative to B.
     """
 
-    def evaluate_parity(self, tokenizer: PreTrainedTokenizer | PreTrainedTokenizerFast) -> float:
+    def evaluate_parity(self, tokenizer) -> float:
+        
         def process_fn(examples):
             cs_texts = examples["text_cs"]
             en_texts = examples["text_en"]
-            examples["num_tokens_cs"] = [
-                len(tokenizer.tokenize(text)) for text in cs_texts]
-            examples["num_tokens_en"] = [
-                len(tokenizer.tokenize(text)) for text in en_texts]
+            if isinstance(tokenizer, PreTrainedTokenizerFast) or isinstance(tokenizer, PreTrainedTokenizer):
+                examples["num_tokens_cs"] = [
+                    len(tokenizer.tokenize(text)) for text in cs_texts]
+                examples["num_tokens_en"] = [
+                    len(tokenizer.tokenize(text)) for text in en_texts]
+            else:
+                examples["num_tokens_cs"] = [
+                    len(tokenizer.encode(text)) for text in cs_texts]
+                examples["num_tokens_en"] = [
+                    len(tokenizer.encode(text)) for text in en_texts]
 
             return examples
 
@@ -130,8 +149,11 @@ class TokenizerEvaluator:
     def evaluate_fertility(self, tokenizer: PreTrainedTokenizer | PreTrainedTokenizerFast) -> float:
         def process_fn(examples):
             texts = examples["text"]
-            examples["num_tokens"] = [
-                len(tokenizer.tokenize(text)) for text in texts]
+            if isinstance(tokenizer, PreTrainedTokenizerFast) or isinstance(tokenizer, PreTrainedTokenizer):
+                examples["num_tokens"] = [
+                    len(tokenizer.tokenize(text)) for text in texts]
+            else:
+                examples["num_tokens"] = [len(tokenizer.encode(text)) for text in texts]
 
             return examples
 
