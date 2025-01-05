@@ -5,6 +5,8 @@ results_test_benczechmark
 logs_benczechmark
 results
 __pycache__
+wandb
+*_itformat
 
 #files
 tokens.py
