@@ -30,9 +30,10 @@ Use a Browser on your local machine to go to:
 localhost:${port}  (prefix w/ https:// if using password)
 "
 
-ml Python/3.12.3-GCCcore-13.3.0 
+ml Python/3.8.6-GCCcore-10.2.0  
+module unload OpenSSL/1.1
 
-source /home/mlynatom/master-thesis-repository-tomas-mlynar/venv/master_venv/bin/activate
+source /home/mlynatom/master-thesis-repository-tomas-mlynar/venv/xp3x/bin/activate
 
-export PATH=/home/mlynatom/master-thesis-repository-tomas-mlynar/venv/master_venv/bin:${PATH}
+export PATH=/home/mlynatom/master-thesis-repository-tomas-mlynar/venv/xp3x/bin:${PATH}
 jupyter-notebook --no-browser --port=${port} --ip=${node}
