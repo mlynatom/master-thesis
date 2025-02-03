@@ -1,4 +1,4 @@
-NUM_GPUS=2
+NUM_GPUS=1
 
 TASK="$1"
 OUTPUT_PATH="$2"
@@ -30,9 +30,9 @@ TRUNCATE_STRATEGY_ARG=""
 if [ "$TRUNCATE_STRATEGY" != "none" ]; then
   TRUNCATE_STRATEGY_ARG=",truncate_strategy=$TRUNCATE_STRATEGY"
 fi
-
+# ,quantization=awq
 python -m lm_eval --model vllm \
-  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$NUM_GPUS,dtype=float16,gpu_memory_utilization=0.5,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG,quantization=awq \
+  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$NUM_GPUS,dtype=float16,gpu_memory_utilization=0.5,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
   --tasks "$TASK" \
   --batch_size auto:4 \
   --output_path "$OUTPUT_PATH" \

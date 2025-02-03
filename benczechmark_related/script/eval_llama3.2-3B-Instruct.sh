@@ -6,10 +6,10 @@
 #SBATCH --gres gpu:1
 #SBATCH --time 24:00:00
 #SBATCH --job-name benczechmark_eval
-#SBATCH --output logs/benczechmark.%j.out
+#SBATCH --output logs/benczechmark_logs/prelim_llama3.2/benczechmark.%j.out
 
-NAME='llama32-3B_instruct'
-MODEL_NAME='meta-llama/Llama-3.2-3B-Instruct'
+NAME='llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged'
+MODEL_NAME='/home/mlynatom/master-thesis-repository-tomas-mlynar/models/llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged'
 
 # set up run settings
 CHAT_TEMPLATE="none"

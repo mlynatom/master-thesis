@@ -17,4 +17,4 @@ echo $(pwd)
 
 export PYTHONPATH=$(pwd)
 
-python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/results/eval_c4ai-command-r-08-2024*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/eval_c4ai-command-r-08-2024_submission.json
+python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/results/eval_llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/eval_llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged_submission.json

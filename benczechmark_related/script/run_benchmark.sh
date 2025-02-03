@@ -15,4 +15,4 @@ export PYTHONPATH=src:$PYTHONPATH
 
 source ~/master-thesis-repository-tomas-mlynar/benczechmark_related/TASKS.sh
 
-sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_c4ai-command-r-08-2024.sh
+sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_llama3.2-3B-Instruct.sh
