@@ -1,14 +1,12 @@
 from unsloth import FastLanguageModel, is_bfloat16_supported
-from unsloth.chat_templates import get_chat_template, train_on_responses_only
 
-from trl import SFTTrainer
-from transformers import TrainingArguments, DataCollatorForSeq2Seq
+from unsloth import UnslothTrainingArguments, UnslothTrainer
 from datasets import load_dataset
 
 import torch
 
 import os
-os.environ["WANDB_PROJECT"]="it_experiment"
+os.environ["WANDB_PROJECT"]="cp_experiment"
 
 import argparse
 
@@ -25,7 +23,7 @@ parser.add_argument('--lora_alpha', type=int, default=512, help='LoRA alpha')
 parser.add_argument('--lora_dropout', type=float, default=0, help='LoRA dropout')
 parser.add_argument('--bias', type=str, default='none', help='Bias')
 parser.add_argument('--use_gradient_checkpointing', type=str, default='unsloth', help='Use Gradient Checkpointing')
-parser.add_argument('--use_rslora', type=bool, default=False, help='Use Rank Stabilized LoRA')
+parser.add_argument('--use_rslora', type=bool, default=True, help='Use Rank Stabilized LoRA')
 parser.add_argument('--chat_template', type=str, default='llama-3.1', help='Chat Template')
 parser.add_argument('--dataset_id', type=str, default='ctu-aic/cs_instruction_tuning_collection', help='Dataset ID')
 parser.add_argument('--batch_size', type=int, default=32, help='Batch Size')
@@ -35,7 +33,7 @@ parser.add_argument('--num_train_epochs', type=int, default=1, help='Number of T
 parser.add_argument('--learning_rate', type=float, default=1e-4, help='Learning Rate')
 parser.add_argument('--logging_steps', type=int, default=5, help='Logging Steps')
 parser.add_argument('--weight_decay', type=float, default=0.01, help='Weight Decay')
-parser.add_argument('--lr_scheduler_type', type=str, default='linear', help='Learning Rate Scheduler Type')
+parser.add_argument('--lr_scheduler_type', type=str, default='cosine', help='Learning Rate Scheduler Type')
 parser.add_argument('--eval_strategy', type=str, default='steps', help='Evaluation Strategy')
 parser.add_argument('--eval_steps', type=int, default=50, help='Evaluation Steps')
 parser.add_argument('--output_dir', type=str, default='output_models', help='Output Directory')
@@ -78,7 +76,8 @@ model = FastLanguageModel.get_peft_model(
     model,
     r = args.lora_r, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
-                      "gate_proj", "up_proj", "down_proj",],
+                      "gate_proj", "up_proj", "down_proj",
+                      "embed_tokens", "lm_head"],
     lora_alpha = args.lora_alpha,
     lora_dropout = args.lora_dropout, # Supports any, but = 0 is optimized
     bias = args.lora_bias,    # Supports any, but = "none" is optimized
@@ -90,42 +89,39 @@ model = FastLanguageModel.get_peft_model(
 )
 
 # prepare data
-tokenizer = get_chat_template(
-    tokenizer,
-    chat_template = args.chat_template,
-)
+from datasets import load_dataset
 
-def formatting_prompts_func(examples):
-    convos = examples["conversations"]
-    texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False) for convo in convos]
-    return { "text" : texts, }
+# this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
+dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn")
+#we need only texts
+dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+#shuffle to be sure we select "random sample"
+dataset = dataset.shuffle(seed=42)
 
-dataset = load_dataset(args.dataset_id)
+def preprocess_function(examples):
+    return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
 
-#dataset = standardize_ask_library(dataset)
-dataset = dataset.map(formatting_prompts_func, batched = True)
+dataset = dataset.map(preprocess_function, batched=True)
 
-#shuffle dataset
-dataset = dataset.shuffle(seed=SEED)
 
-RUN_NAME = f"it_{model_id.split('/')[-1]}-bs{args.batch_size}-lr{args.learning_rate}-e{args.num_train_epochs}-s{SEED}"
+
+RUN_NAME = f"cp_{model_id.split('/')[-1]}-bs{args.batch_size}-lr{args.learning_rate}-e{args.num_train_epochs}-s{SEED}"
 #init trainer
-trainer = SFTTrainer(
+trainer = UnslothTrainer(
     model = model,
     tokenizer = tokenizer,
     train_dataset = dataset["train"],
-    eval_dataset = dataset["validation"],
+    #eval_dataset = dataset["validation"],
     dataset_text_field = "text",
     max_seq_length = max_seq_length,
-    data_collator = DataCollatorForSeq2Seq(tokenizer = tokenizer),
     dataset_num_proc = 2,
-    packing = False, # Can make training 5x faster for short sequences.
-    args = TrainingArguments(
+
+    args = UnslothTrainingArguments(
         per_device_train_batch_size = args.batch_size,
         gradient_accumulation_steps = args.gradient_accumulation_steps,
         warmup_ratio = args.warmup_ratio,
-        num_train_epochs = args.num_train_epochs, # Set this for 1 full training run.
-        #max_steps = 60,
+        #num_train_epochs = args.num_train_epochs, # Set this for 1 full training run.
+        max_steps = 1000,
         learning_rate = args.learning_rate,
         fp16 = not is_bfloat16_supported(),
         bf16 = is_bfloat16_supported(),
@@ -137,16 +133,9 @@ trainer = SFTTrainer(
         output_dir = args.output_dir,
         report_to = "wandb", # Use this for WandB etc
         run_name=RUN_NAME,
-        eval_strategy = args.eval_strategy,
-        eval_steps = args.eval_steps,
+        # eval_strategy = args.eval_strategy,
+        # eval_steps = args.eval_steps,
     ),
-)
-
-#training only on responses (mask out instructions)
-trainer = train_on_responses_only(
-    trainer,
-    instruction_part = "<|start_header_id|>user<|end_header_id|>\n\n",
-    response_part = "<|start_header_id|>assistant<|end_header_id|>\n\n",
 )
 
 #Show current memory stats

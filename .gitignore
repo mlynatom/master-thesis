@@ -10,6 +10,8 @@ wandb
 data
 models
 outputs
+unsloth_compiled_cache
+_unsloth_temporary_saved_buffers
 
 #files
 tokens.py
