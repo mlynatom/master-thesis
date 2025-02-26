@@ -123,6 +123,7 @@ trainer = UnslothTrainer(
         #num_train_epochs = args.num_train_epochs, # Set this for 1 full training run.
         max_steps = 1000,
         learning_rate = args.learning_rate,
+        embedding_learning_rate = args.learning_rate/5,
         fp16 = not is_bfloat16_supported(),
         bf16 = is_bfloat16_supported(),
         logging_steps = args.logging_steps,
