@@ -1,0 +1,26 @@
+{
+    "zero_optimization": {
+        "stage": 2
+    },
+    "optimizer": {
+        "type": "adamw_8bit",
+        "params": {
+            "lr": "auto",
+            "betas": "auto",
+            "eps": "auto",
+            "weight_decay": "auto"
+        }
+    },
+    "scheduler": {
+        "type": "WarmupCosineLR",
+        "params": {
+            "total_num_steps": "auto",
+            "warmup_min_lr": "auto",
+            "warmup_max_lr": "auto",
+            "warmup_num_steps": "auto"
+        }
+    },
+    "fp16": {
+        "enabled": true
+    }
+}
