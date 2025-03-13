@@ -13,6 +13,7 @@ outputs
 unsloth_compiled_cache
 _unsloth_temporary_saved_buffers
 output_models
+tokenizers
 
 #files
 tokens.py

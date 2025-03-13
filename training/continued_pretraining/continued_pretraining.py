@@ -15,7 +15,7 @@ os.environ["WANDB_PROJECT"]="unsloth_cp_experiment"
 # params
 SEED = 42
 model_id =  "meta-llama/Llama-3.1-8B"
-max_seq_length = 4096 # Choose any! We auto support RoPE Scaling internally!
+max_seq_length = 512 # Choose any! We auto support RoPE Scaling internally!
 dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = False # Use 4bit quantization to reduce memory usage. Can be False.
 # Training params
@@ -71,19 +71,26 @@ model = FastLanguageModel.get_peft_model(
 )
 
 # prepare data
-from datasets import load_dataset
+# from datasets import load_dataset
 
-# this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
-dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train", streaming=True)
-#we need only texts
-dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
-#shuffle to be sure we select "random sample"
-dataset = dataset.shuffle(seed=42)
+# # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
+# dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train", streaming=True)
+# #we need only texts
+# dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+# #shuffle to be sure we select "random sample"
+# dataset = dataset.shuffle(seed=42)
 
-def preprocess_function(examples):
-    return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
+# def preprocess_function(examples):
+#     return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
 
-dataset = dataset.map(preprocess_function, batched=True)
+# dataset = dataset.map(preprocess_function, batched=True)
+
+from datasets import load_from_disk
+
+dataset = load_from_disk("data/pretraining/fineweb-2_ces_Latn_19531250_llama_preprocessed")
+dataset = dataset.select(range(10000))
+#dataset = dataset.to_iterable_dataset()
+dataset
 
 
 
@@ -92,17 +99,17 @@ RUN_NAME = f"cp_{model_id.split('/')[-1]}-cs"
 trainer = UnslothTrainer(
     model = model,
     tokenizer = tokenizer,
-    train_dataset = dataset["train"],
+    train_dataset = dataset,
     dataset_text_field = "text",
     max_seq_length = max_seq_length,
-    dataset_num_proc = 2,
+    dataset_num_proc = 12,
 
     args = UnslothTrainingArguments(
         per_device_train_batch_size = batch_size,
         gradient_accumulation_steps = gradient_accumulation_steps,
         warmup_ratio = warmup_ratio,
-        #num_train_epochs = args.num_train_epochs, # Set this for 1 full training run.
-        max_steps = max_steps,
+        num_train_epochs = 1, # Set this for 1 full training run.
+        #max_steps = max_steps,
         learning_rate = learning_rate,
         embedding_learning_rate = embedding_learning_rate,
         fp16 = not is_bfloat16_supported(),
@@ -113,7 +120,7 @@ trainer = UnslothTrainer(
         lr_scheduler_type = "cosine",
         seed = SEED,
         output_dir = f"models/cp_{RUN_NAME}",
-        report_to = "wandb", # Use this for WandB etc
+        report_to = "none", # Use this for WandB etc
         run_name=RUN_NAME,
         # eval_strategy = args.eval_strategy,
         # eval_steps = args.eval_steps,

@@ -2,8 +2,11 @@
     "zero_optimization": {
         "stage": 2
     },
+    "train_micro_batch_size_per_gpu": "auto",
+    "train_batch_size": "auto",
+    "gradient_accumulation_steps": "auto",
     "optimizer": {
-        "type": "adamw_8bit",
+        "type": "AdamW",
         "params": {
             "lr": "auto",
             "betas": "auto",
@@ -15,8 +18,6 @@
         "type": "WarmupCosineLR",
         "params": {
             "total_num_steps": "auto",
-            "warmup_min_lr": "auto",
-            "warmup_max_lr": "auto",
             "warmup_num_steps": "auto"
         }
     },

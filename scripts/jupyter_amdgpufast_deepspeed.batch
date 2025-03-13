@@ -30,10 +30,12 @@ Use a Browser on your local machine to go to:
 localhost:${port}  (prefix w/ https:// if using password)
 "
 
-ml Python/3.12.3-GCCcore-13.3.0
-ml CUDA/12.4.0
+ml PyTorch/2.6.0-foss-2023b-CUDA-12.4.0
+ml jupyter-server/2.7.2-GCCcore-13.2.0
+ml typing-extensions/4.11.0-GCCcore-13.2.0
+ml libaio/0.3.113-GCCcore-13.3.0
 
-source /home/mlynatom/master-thesis-repository-tomas-mlynar/venv/master_venv/bin/activate
+source /home/mlynatom/master-thesis-repository-tomas-mlynar/venv/deepspeed_venv/bin/activate
 
-export PATH=/home/mlynatom/master-thesis-repository-tomas-mlynar/venv/master_venv/bin:${PATH}
+export PATH=/home/mlynatom/master-thesis-repository-tomas-mlynar/venv/deepspeed_venv/bin:${PATH}
 jupyter-notebook --no-browser --port=${port} --ip=${node}

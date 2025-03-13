@@ -3,7 +3,7 @@ import random
 import numpy as np
 from peft import LoftQConfig, get_peft_model, LoraConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from trl import SFTTrainer
+from trl import SFTTrainer, SFTConfig
 from typing import Optional
 from dataclasses import dataclass, field
 from transformers import TrainingArguments
@@ -58,7 +58,7 @@ def _create_unsloth_optimizer(
     return optimizer
 
 @dataclass
-class UnslothTrainingArguments(TrainingArguments):
+class UnslothTrainingArguments(SFTConfig):
     embedding_learning_rate : Optional[float] = field(
         default = None,
         metadata = {"help" : "Different learning rates for embeddings and lm_head."}
@@ -112,6 +112,9 @@ def main(args):
     #load tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_id)
 
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
+
     #load model
     #TODO load in 4 bit support?
     #float16 set by default (better for gradient accumulation according to deepspeed)
@@ -123,32 +126,37 @@ def main(args):
 
     #init LoRA
     #TODO checkpointing not here
+    #TODO loftq not working? Compatibility issue?
     lora_config = LoraConfig(r=lora_r, 
-                             alpha=lora_alpha, 
+                             lora_alpha=lora_alpha, 
                              target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                                              "gate_proj", "up_proj", "down_proj",
                                              "embed_tokens", "lm_head"],
                              lora_dropout=0,
                              bias="none",
                              use_rslora=True,
-                             init_lora_weights="loftq",
-                             loftq_config=loftq_config)
+                             #init_lora_weights="loftq",
+                             #loftq_config=loftq_config
+                             )
 
 
     model = get_peft_model(model, lora_config)
 
     # prepare data
     # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
-    dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train", streaming=True)
+    dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train")
     #we need only texts
     dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
     #shuffle to be sure we select "random sample"
     dataset = dataset.shuffle(seed=42)
+    dataset = dataset.select(range(1000))
 
     def preprocess_function(examples):
         return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
 
     dataset = dataset.map(preprocess_function, batched=True)
+
+    print(dataset.column_names)
 
 
     RUN_NAME = f"deepspeed_{model_id.split('/')[-1]}-cs"
@@ -156,12 +164,11 @@ def main(args):
     trainer = UnslothTrainer(
         model = model,
         tokenizer = tokenizer,
-        train_dataset = dataset["train"],
-        dataset_text_field = "text",
-        max_seq_length = max_seq_length,
-        dataset_num_proc = 2,
-
+        train_dataset = dataset,
         args = UnslothTrainingArguments(
+            max_seq_length = max_seq_length,
+            dataset_text_field = "text",
+            dataset_num_proc = 2,
             per_device_train_batch_size = batch_size,
             gradient_accumulation_steps = gradient_accumulation_steps,
             warmup_ratio = warmup_ratio,
@@ -169,8 +176,8 @@ def main(args):
             max_steps = max_steps,
             learning_rate = learning_rate,
             embedding_learning_rate = embedding_learning_rate,
-            fp16 = not is_bfloat16_supported(),
-            bf16 = is_bfloat16_supported(),
+            fp16 = True,
+            #bf16 = is_bfloat16_supported(),
             logging_steps = 1,
             optim = "adamw_8bit",
             weight_decay = weight_decay,
@@ -179,8 +186,8 @@ def main(args):
             output_dir = f"models/cp_{RUN_NAME}",
             report_to = "wandb", # Use this for WandB etc
             run_name=RUN_NAME,
-            gradient_chekpointing = True,
-            deepspeed = "deepspeed_config.json",
+            gradient_checkpointing = True,
+            deepspeed = args.deepspeed_config,
             # eval_strategy = args.eval_strategy,
             # eval_steps = args.eval_steps,
         ),
@@ -215,6 +222,22 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser = deepspeed.add_config_arguments(parser)
+    parser.add_argument('--local_rank', type=int, default=-1,
+                    help='local rank passed from distributed launcher')
+    #parser = deepspeed.add_config_arguments(parser)
+    parser.add_argument('--deepspeed',
+                       default=False,
+                       action='store_true',
+                       help='Enable DeepSpeed (helper flag for user code, no impact on DeepSpeed backend)')
+    parser.add_argument('--deepspeed_config', default="/home/mlynatom/master-thesis-repository-tomas-mlynar/training/continued_pretraining/deepspeed_config.json", type=str, help='DeepSpeed json configuration file.')
+    parser.add_argument("--model_name_or_path", type=str, required=True, help="Path to the pre-trained model or model identifier from huggingface.co/models.")
+    parser.add_argument("--per_device_train_batch_size", type=int, default=8, help="Batch size per device during training.")
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=128, help="Number of updates steps to accumulate before performing a backward/update pass.")
+    parser.add_argument("--output_dir", type=str, default="models/test_model", help="The output directory where the model predictions and checkpoints will be written.")
+    parser.add_argument("--fp16", action="store_true", help="Whether to use 16-bit (mixed) precision training.")
+    parser.add_argument("--do_train", action="store_true", help="Whether to run training.")
+    parser.add_argument("--max_train_samples", type=int, default=None, help="For debugging purposes or quicker training, truncate the number of training examples to this value if set.")
+    parser.add_argument("--lr", type=float, default=5e-4, help="Learning rate.")
+    parser.add_argument("--weight_decay", type=float, default=0.01, help="Weight decay.")
     args = parser.parse_args()
     main(args)
