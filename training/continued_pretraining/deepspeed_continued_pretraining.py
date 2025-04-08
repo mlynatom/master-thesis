@@ -119,7 +119,7 @@ def main(args):
     #TODO load in 4 bit support?
     #float16 set by default (better for gradient accumulation according to deepspeed)
     #TODO max_seq_length not here
-    model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
+    model = AutoModelForCausalLM.from_pretrained(model_id, load_in_4bit=True)
 
     #LoftQ config
     loftq_config = LoftQConfig(loftq_bits=4)
@@ -142,21 +142,28 @@ def main(args):
 
     model = get_peft_model(model, lora_config)
 
-    # prepare data
-    # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
-    dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train")
-    #we need only texts
-    dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
-    #shuffle to be sure we select "random sample"
-    dataset = dataset.shuffle(seed=42)
+    # # prepare data
+    # # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
+    # dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train")
+    # #we need only texts
+    # dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+    # #shuffle to be sure we select "random sample"
+    # dataset = dataset.shuffle(seed=42)
+    # dataset = dataset.select(range(1000))
+
+    # def preprocess_function(examples):
+    #     return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
+
+    # dataset = dataset.map(preprocess_function, batched=True)
+
+    # print(dataset.column_names)
+
+    from datasets import load_from_disk, load_dataset, load_from_disk
+
+    dataset = load_from_disk("/mnt/personal/mlynatom/data/pretraining/fineweb-2_ces_Latn_19531250_llama_preprocessed")
+    #dataset = dataset.select(range(1953125))
     dataset = dataset.select(range(1000))
-
-    def preprocess_function(examples):
-        return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
-
-    dataset = dataset.map(preprocess_function, batched=True)
-
-    print(dataset.column_names)
+    #dataset = dataset.to_iterable_dataset()
 
 
     RUN_NAME = f"deepspeed_{model_id.split('/')[-1]}-cs"

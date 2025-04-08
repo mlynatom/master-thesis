@@ -9,20 +9,21 @@ from peft import LoftQConfig
 import torch
 
 import os
-os.environ["WANDB_PROJECT"]="unsloth_cp_experiment"
+#os.environ["WANDB_PROJECT"]="unsloth_cp_experiment"
+os.environ["NEPTUNE_PROJECT"] = "mlynatom/thesis"
 
 
 # params
 SEED = 42
 model_id =  "meta-llama/Llama-3.1-8B"
-max_seq_length = 512 # Choose any! We auto support RoPE Scaling internally!
-dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
+max_seq_length = 1024 # Choose any! We auto support RoPE Scaling internally!
+dtype = torch.bfloat16 # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = False # Use 4bit quantization to reduce memory usage. Can be False.
 # Training params
-batch_size = 8
-gradient_accumulation_steps = 128
+batch_size = 128
+gradient_accumulation_steps = 8
 warmup_ratio = 0.05
-max_steps = 61234
+max_steps = 10
 learning_rate = 5e-4
 embedding_learning_rate = learning_rate/2
 weight_decay = 0.01
@@ -64,66 +65,72 @@ model = FastLanguageModel.get_peft_model(
     lora_dropout = 0, # Supports any, but = 0 is optimized
     bias = "none",    # Supports any, but = "none" is optimized
     # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
-    use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
+    use_gradient_checkpointing = "unsloth", #"unsloth", # True or "unsloth" for very long context
     random_state = SEED,
     use_rslora = True,  # We support rank stabilized LoRA
+    init_lora_weights ='loftq',
     loftq_config = loftq_config, # And LoftQ
 )
 
 # prepare data
 # from datasets import load_dataset
 
-# # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
-# dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train", streaming=True)
-# #we need only texts
-# dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
-# #shuffle to be sure we select "random sample"
-# dataset = dataset.shuffle(seed=42)
+# this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
+dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train")
+#we need only texts
+dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+#shuffle to be sure we select "random sample"
+dataset = dataset.shuffle(seed=SEED)
 
-# def preprocess_function(examples):
-#     return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
+dataset = dataset.take(500000) # take 500k samples for training ~ 42 hours
 
-# dataset = dataset.map(preprocess_function, batched=True)
+def preprocess_function(examples):
+    return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
 
-from datasets import load_from_disk
+dataset = dataset.map(preprocess_function, batched=True)
 
-dataset = load_from_disk("data/pretraining/fineweb-2_ces_Latn_19531250_llama_preprocessed")
-dataset = dataset.select(range(10000))
-#dataset = dataset.to_iterable_dataset()
-dataset
+# from datasets import load_from_disk
+
+# dataset = load_from_disk("/mnt/personal/mlynatom/data/pretraining/fineweb-2_ces_Latn_19531250_llama_preprocessed")
+# dataset = dataset.select(range(1000))
+# #dataset = dataset.to_iterable_dataset()
+# dataset
 
 
 
-RUN_NAME = f"cp_{model_id.split('/')[-1]}-cs"
+RUN_NAME = f"cp_{model_id.split('/')[-1]}-full_cs_fineweb2_seed{SEED}_neptune_bs{batch_size}_samples{len(dataset)}"
 #init trainer
 trainer = UnslothTrainer(
     model = model,
     tokenizer = tokenizer,
     train_dataset = dataset,
-    dataset_text_field = "text",
-    max_seq_length = max_seq_length,
-    dataset_num_proc = 12,
 
     args = UnslothTrainingArguments(
+        dataset_text_field = "text",
+        max_seq_length = max_seq_length,
         per_device_train_batch_size = batch_size,
         gradient_accumulation_steps = gradient_accumulation_steps,
         warmup_ratio = warmup_ratio,
+        dataset_num_proc = 8,
         num_train_epochs = 1, # Set this for 1 full training run.
         #max_steps = max_steps,
         learning_rate = learning_rate,
         embedding_learning_rate = embedding_learning_rate,
-        fp16 = not is_bfloat16_supported(),
-        bf16 = is_bfloat16_supported(),
+        fp16 = False,
+        bf16 = True,
         logging_steps = 1,
         optim = "adamw_8bit",
         weight_decay = weight_decay,
         lr_scheduler_type = "cosine",
         seed = SEED,
-        output_dir = f"models/cp_{RUN_NAME}",
-        report_to = "none", # Use this for WandB etc
+        output_dir = f"/mnt/personal/mlynatom/thesis_models/{RUN_NAME}",
+        report_to = "neptune", # Use this for WandB etc
         run_name=RUN_NAME,
         # eval_strategy = args.eval_strategy,
         # eval_steps = args.eval_steps,
+        save_strategy = "steps",
+        save_steps = 5,
+        save_total_limit = 2,
     ),
 )
 
@@ -151,5 +158,5 @@ print(f"Peak reserved memory for training % of max memory = {lora_percentage} %.
 
 
 #local save model
-model.save_pretrained(f"models/{RUN_NAME}")
-tokenizer.save_pretrained(f"models/{RUN_NAME}")
+model.save_pretrained(f"/mnt/personal/mlynatom/thesis_models/{RUN_NAME}/final")
+tokenizer.save_pretrained(f"/mnt/personal/mlynatom/thesis_models/{RUN_NAME}/final")

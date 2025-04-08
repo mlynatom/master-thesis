@@ -12,12 +12,13 @@ ml Python/3.12.3-GCCcore-13.3.0
 source /home/mlynatom/master-thesis-repository-tomas-mlynar/venv/master_venv/bin/activate
 
 python /home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation/perplexity/eval_perplexity.py \
-    --model_id "/home/mlynatom/master-thesis-repository-tomas-mlynar/models/llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged" \
+    --model_id "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_cs_fineweb2_seed42_neptune_bs128_samples500000/final" \
     --device "cuda" \
-    --load_in_16bit True \
+    --load_in_4bit \
     --batch_size 4 \
-    --max_length 4096 \
+    --max_length 1024 \
     --dataset_id "HuggingFaceFW/fineweb-2" \
     --split "test" \
     --subset "ces_Latn" \
     --output_dir "/home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation/perplexity/" \
+    --add_start_token \
