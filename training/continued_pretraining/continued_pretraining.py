@@ -1,7 +1,7 @@
 from unsloth import FastLanguageModel, is_bfloat16_supported
 
 from unsloth import UnslothTrainingArguments, UnslothTrainer
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk
 import random
 import numpy as np
 from peft import LoftQConfig
@@ -15,6 +15,7 @@ os.environ["NEPTUNE_PROJECT"] = "mlynatom/thesis"
 
 # params
 SEED = 42
+#model_id =  "/home/mlynatom/master-thesis-repository-tomas-mlynar/models/Llama-3.1-8B-cs_expand_5M_subword_resizing"
 model_id =  "meta-llama/Llama-3.1-8B"
 max_seq_length = 1024 # Choose any! We auto support RoPE Scaling internally!
 dtype = torch.bfloat16 # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
@@ -73,32 +74,31 @@ model = FastLanguageModel.get_peft_model(
 )
 
 # prepare data
-# from datasets import load_dataset
+#dataset_id = "HuggingFaceFW/fineweb-2"
+dataset_id = "/mnt/personal/mlynatom/data/pretraining/fineweb2-cs_finewebedu-en_31_500k"
+dataset_name = dataset_id.split("/")[-1]
+
+# from datasets import load_dataset 
 
 # this dataset has already fixed encoding using ftfy (as is used by me in the preprocessing steps of other datasets)
-dataset = load_dataset("HuggingFaceFW/fineweb-2", "ces_Latn", split="train")
-#we need only texts
-dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
-#shuffle to be sure we select "random sample"
-dataset = dataset.shuffle(seed=SEED)
+# dataset = load_dataset(dataset_id, "ces_Latn", split="train")
+# #we need only texts
+# dataset = dataset.remove_columns(["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+# #shuffle to be sure we select "random sample"
+# dataset = dataset.shuffle(seed=SEED)
 
-dataset = dataset.take(500000) # take 500k samples for training ~ 42 hours
+# dataset = dataset.take(500000) # take 500k samples for training ~ 42 hours
+
+dataset = load_from_disk(dataset_id)
 
 def preprocess_function(examples):
     return {"text": [example + tokenizer.eos_token for example in examples["text"]]}
 
 dataset = dataset.map(preprocess_function, batched=True)
 
-# from datasets import load_from_disk
+print("dataset processing done")
 
-# dataset = load_from_disk("/mnt/personal/mlynatom/data/pretraining/fineweb-2_ces_Latn_19531250_llama_preprocessed")
-# dataset = dataset.select(range(1000))
-# #dataset = dataset.to_iterable_dataset()
-# dataset
-
-
-
-RUN_NAME = f"cp_{model_id.split('/')[-1]}-full_cs_fineweb2_seed{SEED}_neptune_bs{batch_size}_samples{len(dataset)}"
+RUN_NAME = f"cp_{model_id.split('/')[-1]}-full_{dataset_name}_seed{SEED}_samples{len(dataset)}"
 #init trainer
 trainer = UnslothTrainer(
     model = model,
