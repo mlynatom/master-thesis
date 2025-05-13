@@ -22,3 +22,5 @@ tokens.py
 config.txt
 
 *.code-workspace
+
+wildbench_results_dir
