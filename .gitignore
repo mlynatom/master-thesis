@@ -23,4 +23,6 @@ config.txt
 
 *.code-workspace
 
-wildbench_results_dir
+wildbench_result_dirs
+python
+perplexity_results
