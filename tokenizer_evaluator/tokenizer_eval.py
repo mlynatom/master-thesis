@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import numpy as np
 from tqdm import tqdm
@@ -10,11 +10,15 @@ from datasets import IterableDataset, load_dataset, load_from_disk
 
 
 class TokenizerEvaluator:
-    def __init__(self, fertility_dataset: str = "BUT-FIT/BUT-LCC", fertility_split: str = "test", parity_dataset: str = "/mnt/data/factcheck/czeng20/hf_dataset", parity_split: str = "test"):
+    def __init__(self, fertility_dataset: str = "BUT-FIT/BUT-LCC", fertility_subset:Optional[str] = None, fertility_split: str = "test", parity_dataset: str = "/mnt/data/factcheck/czeng20/hf_dataset", parity_split: str = "test"):
         # load evaluation datasets
         # fertility dataset
-        self.fertility_dataset = load_dataset(
-            fertility_dataset, split=fertility_split, streaming=True)
+        if fertility_subset is not None:
+            self.fertility_dataset = load_dataset(
+                fertility_dataset, fertility_subset, split=fertility_split, streaming=True)
+        else:
+            self.fertility_dataset = load_dataset(
+                fertility_dataset, split=fertility_split, streaming=True)
 
         # prepare the number of words in the fertility dataset
         def process_fn(examples):
@@ -22,8 +26,16 @@ class TokenizerEvaluator:
                                      for text in examples["text"]]
             return examples
 
-        self.fertility_dataset = self.fertility_dataset.map(
-            process_fn, batched=True, remove_columns=["title", "part"])
+        if fertility_dataset == "BUT-FIT/BUT-LCC":
+            self.fertility_dataset = self.fertility_dataset.map(
+                process_fn, batched=True, remove_columns=["title", "part"])
+        
+        elif fertility_subset == "HuggingFaceFW/fineweb-2":
+            self.fertility_dataset = self.fertility_dataset.map(
+                process_fn, batched=True, remove_columns=["id", "dump", "url", "date", "file_path", "language", "language_score", "language_script", "minhash_cluster_size", "top_langs"])
+        else:
+            self.fertility_dataset = self.fertility_dataset.map(
+                process_fn, batched=True)
 
         # parity dataset
         self.parity_dataset = load_from_disk(parity_dataset)[parity_split]
@@ -37,7 +49,7 @@ class TokenizerEvaluator:
         results = {}
         for model_id, all_models in unique_tokenizer_ids.items():
             try:
-                tokenizer = AutoTokenizer.from_pretrained(model_id)
+                tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
             except:
                 try:
                     tokenizer = tiktoken.encoding_for_model(model_id)

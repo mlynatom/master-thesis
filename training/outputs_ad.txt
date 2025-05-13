@@ -1,0 +1,179 @@
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Prompt: Označte entity ve větě.
+
+Bill Gates je zakladatelem společnosti Microsoft.
+=========================================
+Bill Gates - osoba
+společnost Microsoft - organizace
+zakladatel - role (Bill Gates) obvyk
+věta - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill Gates) - organizace (společnost Microsoft) - popis (Bill Gates) - role (Bill
+=========================================
+
+
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce na téma adaptace LLM by měla mít následující kapitoly:
+
+1. Úvod - shrnutí tématu a cíle práce
+2. Teoretická část - popis problematiky adaptace LLM, historie a vývoj, právní rámec a mezinárodní úprava
+3. Praktická část - popis konkrétních případů adaptace LLM, analýza úspěšnosti a neúspěchů, identifikace faktorů ovlivňujících adaptaci
+4. Diskuse - shrnutí výsledků a doporučení pro budoucí adaptace LLM
+5. Závěr - shrnutí hlavních závěrů a doporučení pro další výzkum v oblasti adaptace LLM.<|reserved_special_token_80|>θενής
+6. Seznam použité literatury - seznam publikací a zdrojů použitých v práci.<|reserved_special_token_20|>šetření
+7. Přílohy - přílohy obsahující například konkrétní příklady adaptace LLM, tabulky a grafy.<|reserved_special_token_40|>oslovení
+8. Seznam použitých zdrojů - seznam zdrojů, které byly použity při tvorbě práce, včetně internetových strá
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Jako AI jsem schopen poskytnout informace o 6. nemoc, ale nemohu poskytnout informace o konkrétní nemoci, protože to není můj úkol. Pokud máte konkrétní dotaz, můžete mi ho položit a já vám poskytnu odpověď na základě dostupných informací. Pokud máte zájem o informace o konkrétní nemoci, doporučuji se obrátit na odborníka v oblasti zdravotnictví nebo na webové stránky věnované zdravotní problematice.<|reserved_special_token_48|>θενής. Každ. obvyk. obvyk. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost.
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Jako AI jsem schopen poskytnout obecný plán učení na státnice z češtiny, ale doporučuji konzultovat tento plán s učitelem nebo odborníkem na danou oblast. Následující kroky by mohly být součástí plánu učení:
+
+1. Zkoušení gramatiky a slovní zásoby: Učitel by měl poskytnout studentům přehled gramatiky a slovní zásoby, které budou na státnicích testovány. Studenti by měli pravidelně zkoušet své znalosti a procvičovat je.
+
+2. Čtení a psaní: Studenti by měli pravidelně číst a psát, aby si osvojili schopnost číst a rozumět textu a psát srozumitelně. Učitel by měl poskytnout studentům různé typy textů, jako jsou eseje, dopisy, zprávy a články.
+
+3. Hovoření: Studenti by měli pravidelně mluvit a procvičovat své komunikační schopnosti. Učitel by měl poskytnout studentům různé typy rozhovorů, jako jsou
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Zde je kód v Pythonu, který spočítá průměr zadaných čísel:
+
+```python
+cisla = [1, 2, 3, 4, 5]
+soucet = sum(cisla)
+prumer = soucet / len(cisla)
+print(f"Prumer zadaných cisel je {prumer}")
+```
+
+Tento kód získá seznam čísel `cisla`, spočítá součet těchto čísel pomocí funkce `sum` a poté spočítá průměr pomocí dělení součtu čísel a délky seznamu čísel. Výsledný průměr je poté vypsaný pomocí funkce `print`. Pokud chcete spočítat průměr zadaných čísel, stačí vložit seznam čísel místo `cisla` v kódu.<|reserved_special_token_132|>θενής
+Tento kód získá seznam čísel `cisla`, spočítá součet těchto čísel pomocí funkce `sum` a poté spočítá průměr pomocí dělení součtu čísel a délky seznamu čísel. Výsledný průměr je poté vypsan
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+8. Každ. 2+2*2 = 2+4 = 6. 6*2 = 12. 12-2 = 10. 10*2 = 20. 20-2 = 18. 18*2 = 36. 36-2 = 34. 34*2 = 68. 68-2 = 66. 66*2 = 132. 132-2 = 130. 130*2 = 260. 260-2 = 258. 258*2 = 516. 516-2 = 514. 514*2 = 1028. 1028-2 = 1026. 1026*2 = 2052. 2052-2 = 2050. 2050*2 = 4100. 4100-2 = 4098. 4098*2 = 8196. 8196-2 = 8194. 8194*2 = 16388. 16388-2 = 16386. 16386*2 = 32772. 32772-2 = 32770. 32770*2 =
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000-mix_11_cs_en_alpaca_dolly/final
+=========================================
+==((====))==  Unsloth 2025.4.7: Fast Llama patching. Transformers: 4.51.3.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Unsloth 2025.4.7 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
+Prompt: Označte entity ve větě.
+
+Bill Gates je zakladatelem společnosti Microsoft.
+=========================================
+Bill Gates - osoba
+společnost Microsoft - organizace
+zakladatel - role (Bill Gates) obvyk
+věta - popis (Bill Gates je zakladatelem společnosti Microsoft)átku
+
+Věta popisuje, že Bill Gates je zakladatelem společnosti Microsoft. Větě se tedy vztahuje k Bill Gates a společnosti Microsoft. Bill Gates je osoba a zakladatelem společnosti Microsoft. Společnost Microsoft je organizace. Větě neobsahuje žádné další entity. Každ entity v větě jsou tedy Bill Gates a společnost Microsoft.. Bill Gates je zakladatelem společnosti Microsoft. Společnost Microsoft je organizace. Větě neobsahuje žádné další entity. Větě se tedy vztahuje k Bill Gates a společnosti Microsoft. Bill Gates zakladatelem společnosti Microsoft. Bill Gates je osoba a společnost Microsoft. Bill Gates je zakladatelem společnosti Microsoft Bill Bill Gates je osoba a zakladatelem společnosti Microsoft. Společnost Microsoft je organizace. Větě neobsahuje žádné další entity. Větě se tedy vztahuje k Bill Gates a společnosti Microsoft. Bill Gates je osoba a zakladatelem společnosti společnost Microsoft je organizace. Bill Gates je osoba
+=========================================
+
+
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce na téma adaptace LLM by měla mít následující kapitoly:
+
+1. Úvod - shrnutí tématu a jeho významu pro společnost
+2. Historie adaptace LLM - popis historie a vývoje adaptace LLM
+3. Právní aspekty adaptace LLM - popis právních aspektů adaptace LLM a jejich dopad na společnost
+4. Ekonomické aspekty adaptace LLM - popis ekonomických aspektů adaptace LLM a jejich dopad na společnost
+5. Sociální aspekty adaptace LLM - popis sociálních aspektů adaptace LLM a jejich dopad na společnost
+6. Mezinárodní aspekty adaptace LLM - popis mezinárodních aspektů adaptace LLM a jejich dopad na společnost
+7. Závěr - shrnutí výsledků a doporučení pro budoucí adaptace LLM.<|reserved_special_token_140|>/contentassist
+8. Seznam použité literatury - seznam literatury, která byla použita při tvorbě diplomové práce.<|reserved_special_token_221|>átku
+9. Seznam použitého materiálu - seznam materiálů, které byly použity při tvorbě
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Jako AI jsem schopen poskytnout pouze fakta a informace, které jsou k dispozici. Nicméně, 6. nemoc není známá nemoc nebo diagnóza. Může se jednat o chybný překlad nebo překlep v textu. Pokud máte konkrétní dotaz, prosím, zopakujte ho. Děkuji.<|reserved_special_token_108|>assistant・━・━・━・━ůj. Každ. obvykující. obvykující. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účinost. účin
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Jako AI jsem schopen poskytnout obecný plán učení na státnice z češtiny, ale doporučuji konzultovat tento plán s učitelem nebo pedagogickým poradcem, aby byl přizpůsoben vašim individuálním potřebám a schopnostem.
+
+1. Zkoušení gramatiky a slovní zásoby
+2. Čtení a analýza literárních textů
+3. Psaní a analýza literárních textů
+4. Zkoušení slovní zásoby a gramatiky v kontextu
+5. Zkoušení slovní zásoby a gramatiky v kontextu
+6. Zkoušení slovní zásoby a gramatiky v kontextu
+7. Zkoušení slovní zásoby a gramatiky v kontextu
+8. Zkoušení slovní zásoby a gramatiky v kontextu
+9. Zkoušení slovní zásoby a gramatiky v kontextu
+10. Zkoušení slovní zásoby a gramatiky v kontextu
+
+Při každém zkoušení gramatiky a slovní z
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Zde je kód v Pythonu, který spočítá průměr zadaných čísel:
+
+```python
+cisla = [1, 2, 3, 4, 5]
+soucet = 0
+for cislo in cisla:
+    soucet += cislo
+prumer = soucet / len(cisla)
+print(f"Prumer zadaných cisel je {prumer}")
+```
+
+Tento kód získá seznam čísel `cisla`, spočítá součet všech čísel v tomto seznamu pomocí proměnné `soucet` a poté spočítá průměr pomocí délky seznamu a součtu. Nakonec vypíše průměr na obrazovku. Pokud chcete, aby uživatel zadával čísla, můžete použít funkci `input()` a proměnnou `cisla` nahradit seznamem, který bude obsahovat čísla zadaná uživatelem. Každ
+
+```
+cisla = [1, 2, 3, 4, 5]
+soucet = 0
+for cislo in cisla:
+    soucet += cislo
+prumer
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+8. Každ. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4*2 = 2 + 8 = 10. 2+2*2 = 2 + 4
+=========================================
+
+
+
+=========================================
+
+

@@ -1,0 +1,3 @@
+model_id,fertility,parity,all_models
+meta-llama/Llama-3.1-8B,2.10292987797095,1.4206662400380612,['meta-llama/Llama-3.1-8B']
+/home/mlynatom/master-thesis-repository-tomas-mlynar/tokenizers/llama-3.1-8B-cs_expand_5M,2.2710021929805495,1.3523253268034574,['/home/mlynatom/master-thesis-repository-tomas-mlynar/tokenizers/llama-3.1-8B-cs_expand_5M']

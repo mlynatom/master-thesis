@@ -1,0 +1,24 @@
+model_id,fertility,parity,all_models
+meta-llama/Llama-3.3-70B-Instruct,2.10292987797095,1.4206662400380612,"['meta-llama/Llama-3.3-70B-Instruct', 'meta-llama/Llama-3.2-1B', 'meta-llama/Llama-3.2-3B', 'meta-llama/Llama-3.1-8B', 'meta-llama/Llama-3.1-70B', 'meta-llama/Llama-3.1-405B']"
+meta-llama/Meta-Llama-3-8B,2.10292987797095,1.4206662400380612,"['meta-llama/Meta-Llama-3-8B', 'meta-llama/Meta-Llama-3-70B']"
+CohereForAI/aya-expanse-8b,1.932832294406789,1.3330894566382467,"['CohereForAI/aya-expanse-8b', 'CohereForAI/aya-expanse-32b', 'CohereForAI/aya-23-8B', 'CohereForAI/aya-23-35B', 'CohereForAI/c4ai-command-r-v01', 'CohereForAI/c4ai-command-r-plus', 'CohereForAI/c4ai-command-r-plus-08-2024']"
+CohereForAI/aya-101,2.1672659222266843,1.2311202457601853,['CohereForAI/aya-101']
+CohereForAI/c4ai-command-r-08-2024,1.932832294406789,1.3330894566382467,['CohereForAI/c4ai-command-r-08-2024']
+CohereLabs/c4ai-command-r7b-12-2024,1.932832294406789,1.3330894566382467,"['CohereLabs/c4ai-command-r7b-12-2024', 'CohereLabs/c4ai-command-a-03-2025']"
+mistralai/Ministral-8B-Instruct-2410,2.2742316368208604,1.4961564337352238,['mistralai/Ministral-8B-Instruct-2410']
+mistralai/Mistral-7B-v0.1,2.8713144755605606,1.655724975211876,"['mistralai/Mistral-7B-v0.1', 'mistralai/Mixtral-8x7B-Instruct-v0.1', 'mistralai/Mixtral-8x22B-v0.1']"
+mistralai/Mistral-7B-v0.3,2.8713144755605606,1.655724975211876,['mistralai/Mistral-7B-v0.3']
+mistralai/Mistral-Large-Instruct-2407,2.8715834312246065,1.6550305634606752,['mistralai/Mistral-Large-Instruct-2407']
+mistralai/Mistral-Large-Instruct-2411,2.8715834312246065,1.6550305634606752,['mistralai/Mistral-Large-Instruct-2411']
+google/gemma-3-27b-pt,2.164469826580897,1.3984499370524717,"['google/gemma-3-27b-pt', 'google/gemma-3-12b-pt', 'google/gemma-3-1b-pt', 'google/gemma-3-4b-pt']"
+google/gemma-2-2b,2.109875067209278,1.3572829581951464,"['google/gemma-2-2b', 'google/gemma-2-9b', 'google/gemma-2-27b', 'google/gemma-2b', 'google/gemma-7b']"
+ibm-granite/granite-3.0-8b-base,2.930464251619207,1.65251775556659,"['ibm-granite/granite-3.0-8b-base', 'ibm-granite/granite-3.0-2b-base', 'ibm-granite/granite-3.1-8b-base', 'ibm-granite/granite-3.1-2b-base', 'ibm-granite/granite-3.1-3b-a800m-base', 'ibm-granite/granite-3.1-1b-a400m-base']"
+ibm-granite/granite-3.2-8b-instruct,2.9304667807350606,1.6525180806576765,"['ibm-granite/granite-3.2-8b-instruct', 'ibm-granite/granite-3.2-2b-instruct']"
+BUT-FIT/csmpt7b,1.485877535626351,0.7172087024006707,"['BUT-FIT/csmpt7b', 'BUT-FIT/CSTinyLlama-1.2B']"
+openGPT-X/Teuken-7B-instruct-research-v0.4,1.6653482596482017,1.077200722696349,"['openGPT-X/Teuken-7B-instruct-research-v0.4', 'openGPT-X/Teuken-7B-instruct-commercial-v0.4']"
+utter-project/EuroLLM-1.7B,2.0785144258002064,1.2761993177426816,"['utter-project/EuroLLM-1.7B', 'utter-project/EuroLLM-9B']"
+BSC-LT/ALIA-40b,1.7515137351144736,1.0831262073314107,"['BSC-LT/ALIA-40b', 'BSC-LT/salamandra-7b', 'BSC-LT/salamandra-2b']"
+gpt-4o,2.1768205267468623,1.4962998752874066,['gpt-4o']
+gpt-4,2.840024096151294,1.8194358709354665,['gpt-4']
+gpt-3.5-turbo,2.840024096151294,1.8194358709354665,['gpt-3.5-turbo']
+gpt-2,3.503778933776919,2.1526387140925887,['gpt-2']

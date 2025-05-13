@@ -15,4 +15,4 @@ export PYTHONPATH=src:$PYTHONPATH
 
 source ~/master-thesis-repository-tomas-mlynar/benczechmark_related/TASKS.sh
 
-sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_llama3.2-3B-Instruct.sh
+sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_thesis_model.sh

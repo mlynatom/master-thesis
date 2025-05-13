@@ -1,0 +1,935 @@
+Testing model: meta-llama/Llama-3.1-8B-Instruct
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce o tématu adaptace Large Language Models (LLM) může obsahovat následující kapitolu:
+
+**1. Úvod**
+
+- Vyhledání problému a cíle diplomové práce
+- Přehled současného stavu v oblasti adaptací LLM
+- Struktura diplomové práce
+
+**2. Teoretický základ - Adaptace modelů jazyka**
+
+- Základní principy adaptace modelů jazyka
+- Typy adaptací (fine-tuning, transfer learning apod.)
+- Výhody a nevýhody různých typů adaptací
+
+**3. Technologie pro
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+"Šestá nemoc", také známá jako "šestý smysl", je koncept, který byl poprvé popsán v roce 1927 americkým psychologem a filozofem Alfredem Korzem ve své knize „Brána k nevědomí“. Šestou nemocí se rozumí stav lidského vědomí, kdy člověk ztrácí kontakt s realitou a začíná žít v iluzivní světě.
+
+Korzy popisuje šestnáct různých forem šestiadvaceti nemocí (čtyři různé formy každé čtyři) které jsou způsobeny různými
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Plán učení pro přípravu státnic z českého jazyka může vypadat takto:
+
+**Týden 1-2: Přehled a gramatická teorie**
+
+* Zkoumání struktury české větě, přehled slovních druhů (přítomné i minulé) a jejich použití v různých kontextech.
+* Studium rozdílných způsobů vyjádření času (dnešní čas, budoucí čas, přítomný a minulý perfektum).
+* Analýza tvarosloví českých podstatných jmen.
+
+**Týden
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Dostupný je následující příklad funkce pro výpočet průměru seznamu čísel:
+
+```python
+def vypocit_prumer(cisla):
+    """
+    Vypočíte průměr seznamu čísel.
+
+    Args:
+        cisla (list): Seznam čísel.
+
+    Returns:
+        float: Průměr seznamu čísel.
+    """
+
+    # Zkontroluj zda jsou všechny prvky seznamu skutečně čísly
+    if not all(isinstance(x, (int, float)) for x in cisla):
+        raise ValueError("Seznam obsahuje neplatné hodnoty")
+
+   
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Výpočet podle pořadí operací:
+
+1. Vynásobíme 2 a 2, tj. 2 * 2 = 4.
+2. Přidáme k výsledku z kroku 1 číslo 2, tj. 4 + 2 = 6.
+
+Takže výsledek je 6.<|eot_id|>
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-cp_Llama-3.1-8B-full_cs_fineweb2_seed42_neptune_bs128_samples500000-full_cs_instruction_tuning_collection/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Chcete vědět víc ohledně tématu Jaké články byste měli přidávat svým článkům týkajícím se tvorby knih?
+
+
+Co mám dělat teď když jsem zjistil že můj článek nemá žádný obsah vůbec?
+
+
+Když jste přesvědčen/a tím jaký máte příspěvek vytvořený právě nyní můžete použít následující nápovědu:
+
+
+Pokud budete používat odkazy přímo směrem ke stránkám jiných uživatelů pak musí být vaše příspěvky dostatečně zajímavými způsobem přizpůsobené všem ostatním návštěvníků těchto stránek ať už jde jenom o jednu věc nebo více věcí zároveň pokud budeme přemýšlet hlavně třeba jen jedna věc která může pomoci zlepšit
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Poprvé zaznamenali tuto chorobu lékaři krátce poté začátek války proti Vietnamovi během roku následující válku ukončení americké invaze do Iráku kvůli šíření onemocnění mezi vojáky působícími mimo území Spojených států vůbec poprvé popsáno lékařským výzkumem prováděným dvěma vědci jmenovitými doktorovými tituly Dr.Johnsonovou spolu spolupracovníkem jménovým profesorem Williamsovým obě tyto osoby pracovaly společně jako součást týmu složeného především zkušené pracovní síly akademických institucí zaměřeným zkoumat příčiny smrtelných onemocnění způsobovaných bakteri
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Chcete získat lepší výsledky při zkouškách?
+
+
+Přihlaste svůj zájem prostřednictvím formuláře níže:
+
+
+Vaše údaje budou uchovány pouze tímto způsobem:
+
+
+Popis práce naleznete zde:
+
+
+Jsme tým zkušených učitelů středních škol...
+
+
+Obsah stránky obsahuje informace získané pomocí aplikace Seznam článků dostupných přes API služby Seznam.cz.
+
+
+Seznam články zveřejněné během posledních dnů naleznete tady:
+
+
+Aktuální zprávy najdete přímo tady:
+
+
+Nejnovější příspěvky uživatelům naleznete právě teď hned vedle tohoto textu:
+
+
+Pokud máte nějaké nápady ohledně toho jak zlepšit tuto stránku můžete nám pomoci tím že nás kontakt
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Chcete vědět víc?
+
+
+První věc kterou musí udělat každý člověk začínající programovat je naučit základní syntaxi jazyka:
+
+
+Pokud jste nikdy neviděli nějaký jiný počítační jazyk dříve možná budete překvapeni tím jaký rozdíl dělají malé věci jako například znaménkové operace nebo použití velkého/smělého textu místo malým...
+
+
+Protože většina lidí používá stejné nástroje ať už jde třeba o práci pomocí programu typu Word či PowerPoint případně nějaké jiné aplikace určené především uživatelům nejsou potřeba žádné speciální znalosti ani zkušeností pokud máte alespoň trochu nápovědy můžete snadno získat informace potřebného druhového
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Chcete vědět víc?
+
+
+Co znamená slova nápovědy používaných při úpravách textu pomocí editoru wiki:
+
+
+Nápověda naleznete zde:
+
+
+Wikipedie používá speciální syntaxi označovanou jako mediawiki nebo též wikitext umožňující vytváření různých typů písem včetně kurzivních vět atd...
+
+
+Pokud máte nějaké problémy pochopíte následující informace určitě rychleji…
+
+
+Obsah článku může být upravován různými editačními nástroji např.:
+
+
+Při použití těchto funkcí musíte mít jistotu toho že budete rozumět tomu jaký způsob zpracování textu zvolujete právě teď!
+
+
+Když jste přesvědčení sami
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-cp_Llama-3.1-8B-full_cs_fineweb2_seed42_neptune_bs128_samples500000-full_mix_11_cs_en/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Kde můžu vidět práci lékařského lékaře?
+
+
+Kolik stojí škola práva vysoké školy střední třídy…
+
+
+Kdy přijde nová zpráva ohledně změn podmínek školního systému…
+
+
+Jestli máte zájem zjistit více informací o naší škole…
+
+
+Chcete vědět víc než ostatní lidé…
+
+
+Chci udělat něco zajímavého…
+
+
+Hledejte nějaké věci…
+
+
+Jste připraveni dělat všechno možné…
+
+
+Nechcete být součástí společnosti…
+
+
+Dokončete svou činnost…
+
+
+Vytvořili jste skvělou věc…
+
+
+Bylo dobré dokončit svůj úkol…
+
+
+Byla vaše spolupráce úspěšná…
+
+
+Byl úspěch vaší činnosti…
+
+
+Mnoho věcí můžete udělat…
+
+
+Mnohem lepší způsob toho…
+
+
+Existuje nějaký
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Kde můžete vidět hvězdu blízko země?
+
+
+Platnost:
+
+
+Zobrazit článek na stránkách školy:
+
+
+Seznam článků:
+
+
+Aktuální zprávy:
+
+
+Hledejte další zajímavé příspěvky:
+
+<|end_of_text|>
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Platná zpráva:
+
+
+Zobrazit příspěvky celkem
+
+
+Rychlé zprávy:
+
+
+Aktuální článek:
+
+
+Seznam článků:
+
+
+Hledejte všechny položky:
+
+
+Hlavní obsah stránek:
+
+
+Sledujte naše videa:
+
+<|end_of_text|>
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Chcete vědět víc?
+
+
+Zobrazit příspěvky
+
+
+Seznam přátel:
+
+
+Nadpis zprávy:
+
+
+Fotografie/logo…
+
+
+Poznámka:
+
+<|end_of_text|>
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Kde můžu vidět vaše zprávy?
+
+
+Zobrazit příspěvky
+
+
+Seznam přátel:
+
+
+Hledejte jméno člověka:
+
+<|end_of_text|>
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000-full_cs_instruction_tuning_collection/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Pokud máte zájem získat informace týkající se tématu zpracování textu pomocí strojového učení prostřednictvím počítačů nebo jiných zařízení umožňujících přístup k internetovým stránkám obsahující údaje zveřejněné tímto článkem můžete použít následující odkazy:
+
+
+• Jak vytvořit titul stránky článku?
+
+
+Při vytváření titulu stránky musíte zajistit správnou tvorbu názvu příspěvku podle pravidel publikovaných společností poskytovatel služeb elektronických knihoven dostupných uživatelům těchto služeb včetně informací uváděných výše.
+
+
+Především byste měli zjistit zda název obsahuje nějaké chyby např.: použití velkých písmen místo malým či naopak
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Pokud máte problémy při přehrávání videa, vyzkoušejte Chromium nebo klikněte zde.
+
+
+Sdílení příspěvku:
+
+
+Související články:
+
+
+Přidáno před dvěma dny
+
+
+Předchozí článek:
+
+
+Příspěvky článků:
+
+
+Další článek:
+
+
+Aktuální zprávy:
+
+
+Nejnovější články:
+
+
+Mohlo by vás zajímat:
+
+
+Jak získat peníze rychle pomocí aplikace půjčky okamžitě?
+
+
+Když potřebujete finanční pomoc hned teď můžete použít rychlou aplikaci peněz přímo prostřednictvím našeho webu snadno vyplnit formulář žádosti pomoci dostat peníze během několika minut poté budete moci využít své prostředky přesně podle svých požadavků pokud jste
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Přihlášení pomocí služby přihlašovacích údajů:
+
+
+Pokud máte problémy při použití formuláře pro přidávání zpráv do nového systému zpravodajství můžete použít tento starší systém zprávy.
+
+
+Předchozí článek Počasí dnes ráno bude příjemné...
+
+
+Aktuální články:
+
+
+Když jsem začal používat počítačovou technologii poprvé někdy kolem roku dva tisíce čtyři roky později zjistil že mám velkou chuť dělat věci jinak než ostatní lidé dělají protože nikdo jiný nedokázal udělat přesně takové věci jako já chtěl udělat takže teď můžu říct něco jiného když někdo říká nějaké špatně udělal věc prostě řekněte ať jste měli lepší myšlenku jestli budete
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Vytvořte funkci převádějící číslo desetinného systému na počet číslic před řádovým znakem!
+
+
+Vaše odpověď bude zveřejněna pouze tehdy pokud souhlasíte:
+
+
+Souhlasím
+
+
+Ne souhlasím<|end_of_text|>
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Dnes máme krásný den!
+
+
+Tady máte nějaký zajímavý obsah...
+
+<|end_of_text|>
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000-full_mix_11_cs_en/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Když jste dokončili práci nad některým článkem tohoto tématu můžete přidat článek přímo sem pomocí funkce přeposílání článku prostřednictvím služby elektronické pošty nebo použít funkci přímého přístupu přes službu služeb poskytovaných společností Seznam.cz tímto způsobem budete moci získat informace potřebné k vytvoření nového příspěvku:
+
+
+Pokud máte zájem zjistit více informací týkajících se tvorby nových příspěvků naleznete následující odkazy:
+
+
+Přidávání zpráv probíhá automaticky každý týden poté co dostanete aktuální zpravodaje zveřejněné dříve než tři měsíce zpět.
+
+
+Aktuální zprávy publikované během posledních tří měsíců zobrazují pouze
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Když máte pocit bolesti hlavy nebo špatného zdraví těla vůbec můžete mít problémy například kvůli tomu že jste měli nějaké onemocnění dříve třeba nějakou infekční chorobu která mohla být způsobena různými druhy bakterií či virů případně některým druhem jiného mikroorganismu který mohl poškodit vaše tělo tím způsobem jakýkoliv jiný organismus může vyvolat různé reakce ať už pozitivní negativní neutrálnější prostě jenom takový problém kterým byste mohli trpět pokud budete vědět jaké příznaky mají tyto věci potom určitě zjistíte jestli máte nějaký problém právě teď když mám zájem pochopím proč jsem měl takové nepříjem
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Když jsi chtěl vědět víc ohledně mého života...
+
+Dobrý den paní učitelko,
+
+
+vím že jste hodně vytížená člověk takže mám velkou otázku jestli máte čas abych vám mohl říct něco málo více než jenom vaše hodnocení práce...
+
+
+Pokud byste měli nějaký prostor ať už tady nebo třeba někde jinam tak budu moc rád když budete mít trochu času aby mohla odpovědět alespoň nějakou odpověď!
+
+
+Doufám že dostanete můj příspěvek dříve než později!
+
+
+Předem děkuji Vám velice!
+
+
+Vaše jméno:
+
+
+Předměr zprávy:
+
+
+Jak jsem řekl bych měl nějaké informace které můžou pomoci mně udělat lepší
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+První číslo musí být větší než druhé...
+
+<|end_of_text|>
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+1. What is the difference between a polynomial equation and exponential equations?
+a) Algebraic Equation b) Differential Equation c) Integral Equation d) Polynomial Equation e) None of Above f) Exponential Equation g) Parametric Equation h) Non-linear Equation i) Finite Difference Equation j) Partial Differential Equation k) Ordinary Differential Equation l) Recursive Equation m) Diophantine Equation n) Numerical Equation o) Transcendental Equation p) Trigonometric Equation q) Recurrence Relation r) Simultaneous Equations s) Implicit Function t) Explicit Function u) Iterative Technique v) Sequential Technique w) Solver-Based Techniques
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-full_cs_instruction_tuning_collection/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce je důležitým prvkem vzdělávacího procesu, který umožňuje studentům získat hlubší znalosti a zkušenosti ve svém oboru. V případě studia adaptací LLM (Large Language Models) jsou důležité kapitoly, které by měly být zahrnuty do diplomové práce.
+
+První kapitolou by mělo být shrnutí současného stavu výzkumu v oblasti adaptace LLM. Tato část se zaměřuje na popisné informace o tom, jak fungují současné modely a co bylo dosaženo při jejich použití pro různé aplikace. Studenti mohou také disk
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Odpověď na otázku "Co je to 6. nemoc?" najdete v tomto článku.
+
+What is the sixth disease?
+
+The sixth disease, also known as roseola infantum or exanthem subitum, is a viral infection that primarily affects children between six months and three years of age. It is caused by human herpesvirus-6 (HHV-6), which belongs to the same family of viruses responsible for chickenpox and cold sores.
+Symptoms typically include fever, rash, swollen lymph nodes, sore throat, coughing, runny nose, diarrhea, vomiting, irritability, loss
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Odpověď:
+
+1) Čeština - jazyk a kultura (příprava ke zkouškám státní maturity)
+2) Čeština pro cizince I.
+3) Čeština pro cizince II.
+
+Všechny tři kurzy jsou určeny především studentům, kteří chtějí získat certifikát o znalosti českého jazyka jako druhého nebo třetího jazyku v rámci programu Erasmus+ nebo jiných programů EU. Kurz je také vhodný pro všechny zájemce bez ohledu na jejich národnostní příslušnost či věkové období.
+
+
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Vstup je seznam čísel (vždy alespoň jeden). Všechna čísla jsou celočíselná a pozitivní.
+
+Výstupem by měla být jedna číslo - průměrné číslo ze vstupních čísel.
+```python
+def average(numbers):
+    return sum(numbers) / len(numbers)
+```
+<|end_of_text|>
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+1. ## [Solved] How to get the value of a variable in another function?
+
+Hello,
+
+I have two functions, one is called "main" and other is called "function". I want to use variables from main() inside function(). But when i try it gives me error.
+
+Code:
+#include <iostream>
+using namespace std;
+
+void main()
+{
+int x = 10;
+}
+
+void function(int y)
+{
+
+cout << x; //error here
+}
+• What are you trying to do?
+• Why can't you just pass them as parameters (like your code does)?
+• If this isn't what you're asking
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-full_mix_11_cs_en/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce je důležitým dokumentem, který potvrzuje dosažení vzdělání a kvalifikaci. V případě studia oboru informatiky nebo počítačových věd může být předmětem diplomové práce právě adaptace LLM (Large Language Model). Adaptace LLM zahrnují proces přizpůsobování modelu takovým způsobem, aby byl schopen lépe reagovat na konkrétní úlohy či problémy.
+
+Kapitola I - Úvodní informace o Large Language Models
+
+V první kapitole byste měli uvést základní informace o Large Language Models (
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Odpověď na otázku "co je to 6. nemoc?" se může lišit v závislosti na kontextu, ve kterém byla položena. V lékařství a psychiatrii však existuje několik definic této nemoci.
+
+1) Co je to 6. nemoc?
+2) Jaké jsou příznaky 6. nemoci?
+3) Kdy byste měli navštívit lékaře kvůli podezření z 6. nemoci?
+
+V tomto článku budeme zkoumat tyto otázky a pokusíme se odpovědět na ně tak, aby byly co nejjednodušším způsobem pro ka
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Všechny informace o zkouškách a jejich termínech najdete v sekci Zkoušky.
+
+Odpověď od fylosofa
+
+1) Čeština - jazyk, který se používá k vyjadřování myšlenek a emocí.
+2) Jazyková kompetence je schopnost komunikovat s ostatními lidmi pomocí určitého jazyka nebo skupiny jazyků.
+3) Komunikace je proces výměny informací mezi dvěma či více osobami prostřednictvím řeči, písemných materiálů atd.
+4) Slovník je sbírka slov používan
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Vstup je seznam čísel (nebo řetězec oddělený bílým znakem). Všechna čísla jsou celočíselná a pozitivní.
+
+Výstup by měl být číslo - průměrné aritmetické hodnoty všech vstupních čísel.
+Odpověď musí být přesně na dvě desetinná místa za lomítkem.
+
+
+Příklad:
+
+    [1] => 0.00
+    [2] => 5.50
+    [3] => 10.01
+
+
+[1]: https://www.codewars.com
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+1. ## [Solved] How to solve this equation?
+
+Hi, I have a problem with solving the following equation:
+
+$\frac{d}{dx} \left( x^{\alpha}\right) =\beta$
+
+where $\alpha$ and $\beta$ are constants.
+
+I tried using separation of variables but it didn't work out for me.
+Any help would be appreciated!
+
+Thank you!
+Last edited by a moderator: Jul 27, 2015
+2. Originally Posted by mrsunshine
+Hi, I have a problem with solving the following equation:
+$\frac{d}{dx}(x^\alpha)=
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-Instruct-full_cs_instruction_tuning_collection/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce o tématu adaptace Large Language Models (LLM) může obsahovat následující kapitol:
+
+1. **Úvod**: V této části byste měli krátce představět téma, vysvětlit proč je důležité studium adaptací LLM a shrnout cíle své diplomové práce.
+
+2. **Teoretický rámec**: Zde byste měli popsat teoretické základy LLM, jejich strukturu, typy modelů a algoritmy používané pro jejich výcvik. Měli byste také diskutovat o výhodách a nevýhodách použití LLM v
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+"Šestá nemoc" nebo "šesté onemocnění" se vztahuje k různým teoriím a konceptům, které popisují různé formy zániku lidské společnosti nebo civilizace. Existuje několik různých verzí této myšlenky:
+
+1. **Teorie šesti nemocí**: Tato teorie byla poprvé popsána britským historikem Arnoldem Toynbeem ve své knize „A Study of History“ („Studie o dějinách“) z roku 1935-1957. Podle ní existovaly šest fází vývoje lidstva:
+ * První nemoc
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Plán učení pro přípravu státní zkoušky ze českého jazyka je následující:
+
+**I. Přesahování znalostí a dovedností**
+
+1. **Zkoušení gramatických pravidel**: 
+   - Rozbor slovních druhů (podstatná jména, přídavná jména, podstatné jméno s přízviskem)
+   - Používání tvarových forem ve větách (druhé osoby jednotného čísla v přítomném i minulém času)
+2. **Používaný časový systém**
+   - Využití různých čas
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Dostupný je následující příklad funkce pro výpočet průměru seznamu čísel:
+
+```python
+def vypocit_prumer(cisla):
+    """
+    Vypočíte průměr seznamu čísel.
+
+    Args:
+        cisla (list): Seznam čísel.
+
+    Returns:
+        float: Průměr seznamu čísel.
+    """
+
+    # Zkontrolujte zda seznam obsahuje alespoň jeden prvek
+    if not cisla:
+        raise ValueError("Seznam musí obsahovat alespoň jeden prvek")
+
+    # Použijte funkci sum() a dělitelnou
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Výpočet podle pořadí operací:
+
+1. Vynásobíme 2 a 2, tj. 2 * 2 = 4.
+2. Poté přičteme k výsledku z kroku 1 číslo 2, tj. 4 + 2 = 6.
+
+Takže výsledek je 6.<|eot_id|>
+=========================================
+
+
+
+=========================================
+
+
+
+Testing model: /mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-Instruct-full_mix_11_cs_en/merge_16bit
+=========================================
+==((====))==  Unsloth 2025.3.19: Fast Llama patching. Transformers: 4.50.1.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+
+Prompt: Jaké kapitoly by měla mít diplomová práce na téma adaptace LLM?
+=========================================
+Diplomová práce o tématu adaptace Large Language Models (LLM) může obsahovat následující kapitolu:
+
+1. **Úvod**: V této části byste měli krátce předstát problém, který řeší vaše diplomová práce a stručně popsat cíle vašeho výzkumu.
+
+2. **Teoretická základna**:
+   - Popisujte historii rozvoje jazykových modelů.
+   - Vysvětlíte principy fungování moderních jazykových modelů (například transformer).
+   - Diskutujte aktuální trendy v oblasti strojového učení pro zpracování přirozeného
+=========================================
+
+
+
+Prompt: Co je to 6. nemoc?
+=========================================
+Termín "šestá nemoc" (anglicky "sixth disease") se vztahuje k onemocnění, které způsobuje bakterie Parvovirus B19. Jedná se o virovou infekci, která obvykle postihuje děti a mladé dospělé.
+
+Symptomy šesté nemoci zahrnují:
+
+- Zčervenání obličeje a krku s charakteristickými fialovými skvrnami na kůži.
+- Vyrážky nebo pupáty na těle.
+- Horečka.
+- Únavu nebo slabost.
+- Mén
+=========================================
+
+
+
+Prompt: Napiš mi plán učení na státnice z češtiny.
+=========================================
+Plán učení pro přípravu státní zkoušky ze českého jazyka je následující:
+
+**I. Přesahování znalostí a dovedností**
+
+1. **Zkoušení gramatických pravidel**: 
+   - přehled slovních druhů (podstatné, podstatná jména s přízvisky, přídavné jméno, číslovka)
+   - přehled tvarů sloves v různých časových rozložených formách (dnešní i budoucí) včetně jejich použití ve větě.
+2. **Skládání věty**
+   - přehled typů vět
+=========================================
+
+
+
+Prompt: Napiš mi kód v Pythonu, který spočítá průměr zadaných čísel.
+=========================================
+Dostupný je následující příklad funkce pro výpočet průměru seznamu čísel:
+
+```python
+def pocit_prumeru(cisla):
+    """
+    Vypočíte průměr seznamu čísel.
+
+    Args:
+        cisla (list): Seznam čísel.
+
+    Returns:
+        float: Průměr seznamu čísel.
+    """
+
+    # Zkontroluj zda jsou všechny prvky seznamu skutečně čísly
+    if not all(isinstance(x, (int, float)) for x in cisla):
+        raise ValueError("Seznam obsahuje neplatné hodnoty.")
+
+    #
+=========================================
+
+
+
+Prompt: Kolik je 2+2*2?
+=========================================
+Výpočet podle pořadí operací:
+
+1. Vynásobíme 2 a 2, tj. 2 * 2 = 4.
+2. Poté přičteme k výsledku z kroku 1 další dvě, tj. 4 + 2 = 6.
+
+Takže výsledek je 6.<|eot_id|>
+=========================================
+
+
+
+=========================================
+
+

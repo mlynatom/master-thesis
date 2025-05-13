@@ -4,7 +4,7 @@
 #SBATCH --partition=amdgpu --gres=gpu:1
 #SBATCH --mem-per-cpu 54G
 #SBATCH --job-name gpu_experiments
-#SBATCH --output /home/mlynatom/master-thesis-repository-tomas-mlynar/logs/perplexity/eval_ppl_amdgpu.%J.log
+#SBATCH --output /home/mlynatom/master-thesis-repository-tomas-mlynar/logs/models/perplexity/eval_ppl_amdgpu.%J.log
 
 
 ml Python/3.12.3-GCCcore-13.3.0 
@@ -16,7 +16,8 @@ python /home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation/perplexit
     --device "cuda" \
     --batch_size 4 \
     --max_length 1024 \
-    --dataset_id "/mnt/personal/mlynatom/data/pretraining/fineweb_train_test_split" \
+    --dataset_id "HuggingFaceFW/fineweb-2" \
     --split "test" \
+    --subset "ces_Latn" \
     --output_dir "/home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation/perplexity/" \
     --add_start_token \

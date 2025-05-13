@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=4:00:00
-#SBATCH --nodes=1 --ntasks-per-node=1 --cpus-per-task=4
+#SBATCH --nodes=1 --ntasks-per-node=1 --cpus-per-task=2
 #SBATCH --partition=interactive --gres=gpu:80gb:1
 #SBATCH --mem-per-cpu 54G
 #SBATCH --job-name jupyter_interactive_experiments

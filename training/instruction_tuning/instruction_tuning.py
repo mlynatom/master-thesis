@@ -18,12 +18,15 @@ os.environ["NEPTUNE_PROJECT"] = "mlynatom/thesis"
 # params
 SEED = 42
 #model_id =  "/home/mlynatom/master-thesis-repository-tomas-mlynar/models/Llama-3.1-8B-cs_expand_5M_subword_resizing"
-#model_id =  "meta-llama/Llama-3.1-8B-Instruct"
+model_id =  "meta-llama/Llama-3.1-8B-Instruct"
 #model_id =  "meta-llama/Llama-3.1-8B"
 #model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-cs_expand_5M_subword_resizing-full_fineweb-2_seed42_samples500000/merge_16bit"
 #model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-cs_expand_5M_subword_resizing-full_cs_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000/merge_16bit"
 #model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_cs_fineweb2_seed42_neptune_bs128_samples500000/merge_16bit"
-model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000/merge_16bit"
+#model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000/merge_16bit"
+#model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_cs_fineweb2_seed42_neptune_bs128_samples500000/merge_16bit_v2"
+#model_id = "/mnt/personal/mlynatom/thesis_models/cp_Llama-3.1-8B-full_fineweb2-cs_finewebedu-en_31_500k_seed42_samples500000/merge_16bit_v2"
+
 max_seq_length = 1024 # Choose any! We auto support RoPE Scaling internally!
 dtype = torch.bfloat16 # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = False # Use 4bit quantization to reduce memory usage. Can be False.
@@ -34,7 +37,7 @@ warmup_ratio = 0.05
 learning_rate = 8e-4
 weight_decay = 0.001
 # LoRA params
-lora_r = 256 # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+lora_r = 16 # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
 lora_alpha = 1
 
 # reproducibility
@@ -66,13 +69,13 @@ model = FastLanguageModel.get_peft_model(
     r = lora_r, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",],
-    lora_alpha = 1,
+    lora_alpha = 32,
     lora_dropout = 0, # Supports any, but = 0 is optimized
     bias = "none",    # Supports any, but = "none" is optimized
     # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
     use_gradient_checkpointing = "unsloth", #"unsloth", # True or "unsloth" for very long context
     random_state = SEED,
-    use_rslora = True,  # We support rank stabilized LoRA
+    use_rslora = False,  # We support rank stabilized LoRA
     init_lora_weights ='loftq',
     loftq_config = loftq_config, # And LoftQ
 )
@@ -81,7 +84,8 @@ print("Model loaded")
 
 # prepare data
 #dataset_id = "ctu-aic/cs_instruction_tuning_collection"
-dataset_id = "/mnt/personal/mlynatom/data/it/mix_11_cs_en"
+#dataset_id = "/mnt/personal/mlynatom/data/it/mix_11_cs_en"
+dataset_id = "/mnt/personal/mlynatom/data/it/mix_11_cs_en_alpaca_dolly"
 dataset_name = dataset_id.split("/")[-1]
 
 # from datasets import load_dataset 
@@ -109,10 +113,12 @@ print("dataset processing done")
 splitted_id = model_id.split('/')
 if splitted_id[-1] == "merge_16bit":
     model_name = splitted_id[-2]
+elif splitted_id[-1] == "merge_16bit_v2":
+    model_name = splitted_id[-2] + "_v2"
 else:
     model_name = splitted_id[-1]
 
-RUN_NAME = f"it-{model_name}-full_{dataset_name}"
+RUN_NAME = f"it-{model_name}-{dataset_name}"
 #init trainer
 trainer = SFTTrainer(
     model = model,
@@ -122,7 +128,7 @@ trainer = SFTTrainer(
     dataset_text_field = "text",
     max_seq_length = max_seq_length,
     #data_collator = DataCollatorForSeq2Seq(tokenizer = tokenizer),
-    dataset_num_proc = 8,
+    dataset_num_proc = 2,
     packing = False, # Can make training 5x faster for short sequences.
     args = TrainingArguments(
         per_device_train_batch_size = batch_size,

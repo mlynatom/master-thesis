@@ -17,4 +17,6 @@ echo $(pwd)
 
 export PYTHONPATH=$(pwd)
 
-python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/results/eval_llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/eval_llama3.2-3b-instruct-1epoch-32batch-4gradacc-1e-4lr-merged_submission.json
+MODEL_ID="b->cp_(cs+en)+it_(cs+en-alpaca+dolly)"
+
+python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/results/${MODEL_ID}/eval_${MODEL_ID}*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/submissions/${MODEL_ID}_submission.json

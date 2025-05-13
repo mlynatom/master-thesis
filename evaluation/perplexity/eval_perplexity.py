@@ -153,6 +153,7 @@ if __name__ == "__main__":
     argparser.add_argument("--subset", type=str, default=None, help="Subset of the dataset to use for computing perplexity.")
     argparser.add_argument("--num_samples", type=int, default=None, help="Number of samples to use from the dataset.")
     argparser.add_argument("--output_dir", type=str, default=None, help="Output directory to save the results.")
+    argparser.add_argument("--output_name", type=str, default=None, help="Output name to save the results.")
 
     args = argparser.parse_args()
 
@@ -183,13 +184,18 @@ if __name__ == "__main__":
     print(result)
 
     model_name = args.model_id.split("/")[-1]
-    if model_name == "final":
+    if model_name == "final" or model_name == "merge_16bit" or model_name == "awq":
         model_name = args.model_id.split("/")[-2]
+    elif model_name == "merge_16bit_v2":
+        model_name = args.model_id.split("/")[-2] + "_v2"
 
     dataset_name = args.dataset_id.split("/")[-1]
     
-
-    with open(os.path.join(args.output_dir, f"perplexity_results_{model_name}_{dataset_name}.txt"), "w") as f:
-        f.write(str(result))
+    if args.output_name is None:
+        with open(os.path.join(args.output_dir, f"perplexity_results_{model_name}_{dataset_name}.txt"), "w") as f:
+            f.write(str(result))
+    else:
+        with open(os.path.join(args.output_dir, f"perplexity_results_{args.output_name}_{dataset_name}.txt"), "w") as f:
+            f.write(str(result))
 
     
