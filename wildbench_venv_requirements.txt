@@ -1,0 +1,354 @@
+aiohappyeyeballs==2.6.1
+aiohttp==3.11.18
+aiosignal==1.3.2
+airportsdata==20250224
+alabaster @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/alabaster/alabaster-0.7.13
+annotated-types==0.7.0
+anthropic==0.51.0
+anyio @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/anyio/anyio-4.3.0
+appdirs @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/appdirs/appdirs-1.4.4
+argon2-cffi @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/argon2_cffi/argon2_cffi-23.1.0
+argon2-cffi-bindings @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/argon2cffibindings/argon2-cffi-bindings-21.2.0
+asn1crypto @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/asn1crypto/asn1crypto-1.5.1
+astor==0.8.1
+asttokens @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/asttokens/asttokens-2.4.1
+async-lru @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/asynclru/async-lru-2.0.4
+async-timeout==5.0.1
+atomicwrites @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/atomicwrites/atomicwrites-1.4.1
+attrs @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/attrs/attrs-23.1.0
+Babel @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/Babel/Babel-2.13.1
+backcall @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/backcall/backcall-0.2.0
+backports.entry-points-selectable @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/backportsentrypointsselectable/backports.entry_points_selectable-1.2.0
+backports.functools-lru-cache @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/backportsfunctools_lru_cache/backports.functools_lru_cache-1.6.6
+beautifulsoup4 @ file:///data/temporary/eb-build/BeautifulSoup/4.12.2/GCCcore-13.2.0/BeautifulSoup/beautifulsoup4-4.12.2
+beniget @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/beniget/beniget-0.4.1
+bitarray @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/bitarray/bitarray-2.8.2
+bitstring @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/bitstring/bitstring-4.1.2
+blake3==1.0.4
+bleach @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/bleach/bleach-6.1.0
+blist @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/blist/blist-1.3.6
+Bottleneck @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/Bottleneck/Bottleneck-1.3.7
+CacheControl @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/cachecontrol/cachecontrol-0.13.1
+cachetools==5.5.2
+cachy @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/cachy/cachy-0.3.0
+certifi @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/certifi/certifi-2023.7.22
+cffi @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/cffi/cffi-1.16.0
+chardet @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/chardet/chardet-5.2.0
+charset-normalizer @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/charsetnormalizer/charset-normalizer-3.3.1
+cleo @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/cleo-2.0.1-py3-none-any.whl#sha256=6eb133670a3ed1f3b052d53789017b6e50fca66d1287e6e6696285f4cb8ea448
+click @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/click/click-8.1.7
+cloudpickle @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/cloudpickle/cloudpickle-3.0.0
+cohere==5.15.0
+colorama @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/colorama/colorama-0.4.6
+comm @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/comm/comm-0.2.2
+commonmark @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/commonmark/commonmark-0.9.1
+compressed-tensors==0.9.3
+crashtest @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/crashtest-0.4.1-py3-none-any.whl#sha256=8d23eac5fa660409f57472e3851dab7ac18aba459a8d19cbbba86d3d5aecd2a5
+cryptography @ file:///data/temporary/eb-build/cryptography/41.0.5/GCCcore-13.2.0/cryptography-41.0.5
+cupy-cuda12x==13.4.1
+Cython @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/Cython/Cython-3.0.4
+datasets==3.6.0
+deap @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/deap/deap-1.4.1
+debugpy @ file:///home/eb/.local/easybuild/sources/j/jupyter-server/extensions/debugpy-1.8.1-py2.py3-none-any.whl#sha256=28acbe2241222b87e255260c76741e1fbf04fdc3b6d094fcf57b6c6f75ce1242
+decorator @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/decorator/decorator-5.1.1
+defusedxml @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/defusedxml/defusedxml-0.7.1
+Deprecated==1.2.18
+deprecation @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/deprecation/deprecation-2.1.0
+depyf==0.18.0
+dill==0.3.8
+diskcache==5.6.3
+distlib @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/distlib/distlib-0.3.7
+distro @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/distro/distro-1.8.0
+dnspython==2.7.0
+docopt @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/docopt/docopt-0.6.2
+docutils @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/docutils/docutils-0.20.1
+doit @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/doit/doit-0.36.0
+dulwich @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/dulwich/dulwich-0.21.6
+ecdsa @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/ecdsa/ecdsa-0.18.0
+editables @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/editables/editables-0.5
+einops==0.8.1
+email_validator==2.2.0
+eval_type_backport==0.2.2
+exceptiongroup @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/exceptiongroup/exceptiongroup-1.1.3
+execnet @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/execnet/execnet-2.0.2
+executing @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/executing/executing-2.0.1
+expecttest @ file:///data/temporary/eb-build/expecttest/0.2.1/GCCcore-13.2.0/expecttest-0.2.1
+fastapi==0.115.12
+fastapi-cli==0.0.7
+fastavro==1.10.0
+fastjsonschema @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/fastjsonschema/fastjsonschema-2.19.1
+fastrlock==0.8.3
+filelock @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/filelock/filelock-3.13.0
+fire==0.7.0
+frozenlist==1.6.0
+fsspec @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/fsspec/fsspec-2023.10.0
+future @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/future/future-0.18.3
+gast @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/gast/gast-0.5.4
+gguf==0.16.3
+glob2 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/glob2/glob2-0.7
+gmpy2 @ file:///data/temporary/eb-build/gmpy2/2.1.5/GCC-13.2.0/gmpy2-2.1.5
+google-ai-generativelanguage==0.6.15
+google-api-core==2.24.2
+google-api-python-client==2.169.0
+google-auth==2.40.1
+google-auth-httplib2==0.2.0
+google-generativeai==0.8.5
+googleapis-common-protos==1.70.0
+grpcio==1.71.0
+grpcio-status==1.71.0
+h11 @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/h11/h11-0.14.0
+hatch-fancy-pypi-readme @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/hatch_fancy_pypi_readme/hatch_fancy_pypi_readme-23.1.0
+hatch-vcs @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/hatch_vcs/hatch_vcs-0.3.0
+hatchling @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/hatchling/hatchling-1.18.0
+hf-xet==1.1.0
+html5lib @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/html5lib/html5lib-1.1
+httpcore @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/httpcore/httpcore-1.0.5
+httplib2==0.22.0
+httptools==0.6.4
+httpx @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/httpx/httpx-0.27.0
+httpx-sse==0.4.0
+huggingface-hub==0.31.1
+idna @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/idna/idna-3.4
+imagesize @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/imagesize/imagesize-1.4.1
+importlib-metadata @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/importlib_metadata/importlib_metadata-6.8.0
+importlib-resources @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/importlib_resources/importlib_resources-6.1.0
+iniconfig @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/iniconfig/iniconfig-2.0.0
+interegular==0.3.3
+intervaltree @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/intervaltree/intervaltree-3.1.0
+intreehooks @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/intreehooks/intreehooks-1.0
+ipaddress @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/ipaddress/ipaddress-1.0.23
+ipykernel @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/ipykernel/ipykernel-6.29.4
+ipython @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/ipython/ipython-8.17.2
+ipython-genutils @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/ipython_genutils/ipython_genutils-0.2.0
+ipywidgets @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/ipywidgets/ipywidgets-8.1.2
+jaraco.classes @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/jaracoclasses/jaraco.classes-3.3.0
+jedi @ file:///data/temporary/eb-build/jedi/0.19.1/GCCcore-13.2.0/jedi/jedi-0.19.1
+jeepney @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/jeepney-0.8.0-py3-none-any.whl#sha256=c0a454ad016ca575060802ee4d590dd912e35c122fa04e70306de3d076cce755
+Jinja2 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/Jinja2/Jinja2-3.1.2
+jiter==0.9.0
+joblib @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/joblib/joblib-1.3.2
+json5 @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/json5/json5-0.9.25
+jsonlines==4.0.0
+jsonschema @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jsonschema/jsonschema-4.22.0
+jsonschema-specifications @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jsonschema_specifications/jsonschema_specifications-2023.12.1
+jupyter-events @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_events/jupyter_events-0.10.0
+jupyter-lsp @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/jupyterlsp/jupyter-lsp-2.2.5
+jupyter_client @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_client/jupyter_client-8.6.1
+jupyter_core @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_core/jupyter_core-5.7.2
+jupyter_packaging @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_packaging/jupyter_packaging-0.12.3
+jupyter_server @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_server/jupyter_server-2.14.0
+jupyter_server_terminals @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyter_server_terminals/jupyter_server_terminals-0.5.3
+jupyterlab @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/jupyterlab/jupyterlab-4.2.0
+jupyterlab-widgets @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyterlab_widgets/jupyterlab_widgets-3.0.10
+jupyterlab_pygments @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/jupyterlab_pygments/jupyterlab_pygments-0.3.0
+jupyterlab_server @ file:///data/temporary/eb-build/JupyterLab/4.2.0/GCCcore-13.2.0/jupyterlab_server/jupyterlab_server-2.27.1
+keyring @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/keyring/keyring-24.2.0
+keyrings.alt @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/keyringsalt/keyrings.alt-5.0.0
+lark==1.2.2
+liac-arff @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/liacarff/liac-arff-2.5.0
+llguidance==0.7.19
+llvmlite==0.44.0
+lm-format-enforcer==0.10.11
+lockfile @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/lockfile/lockfile-0.12.2
+lxml @ file:///data/temporary/eb-build/lxml/4.9.3/GCCcore-13.2.0/lxml-4.9.3
+markdown-it-py @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/markdownitpy/markdown-it-py-3.0.0
+MarkupSafe @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/MarkupSafe/MarkupSafe-2.1.3
+matplotlib-inline @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/matplotlibinline/matplotlib-inline-0.1.6
+mdurl @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/mdurl/mdurl-0.1.2
+mistral_common==1.5.4
+mistralai==1.7.0
+mistune @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/mistune/mistune-3.0.2
+mock @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/mock/mock-5.1.0
+more-itertools @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/moreitertools/more-itertools-10.1.0
+mpmath @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/mpmath/mpmath-1.3.0
+msgpack @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/msgpack/msgpack-1.0.7
+msgspec==0.19.0
+multidict==6.4.3
+multiprocess==0.70.16
+nbclient @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/nbclient/nbclient-0.10.0
+nbconvert @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/nbconvert/nbconvert-7.16.4
+nbformat @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/nbformat/nbformat-5.10.4
+nest-asyncio @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/nest_asyncio/nest_asyncio-1.6.0
+netaddr @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/netaddr/netaddr-0.9.0
+netifaces @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/netifaces/netifaces-0.11.0
+networkx @ file:///data/temporary/eb-build/networkx/3.2.1/gfbf-2023b/networkx-3.2.1
+ninja==1.11.1.4
+notebook @ file:///data/temporary/eb-build/JupyterNotebook/7.2.0/GCCcore-13.2.0/notebook-7.2.0
+notebook_shim @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/notebook_shim/notebook_shim-0.2.4
+numba==0.61.2
+numexpr @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/numexpr/numexpr-2.8.7
+numpy @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/numpy/numpy-1.26.2
+nvidia-cublas-cu12==12.4.5.8
+nvidia-cuda-cupti-cu12==12.4.127
+nvidia-cuda-nvrtc-cu12==12.4.127
+nvidia-cuda-runtime-cu12==12.4.127
+nvidia-cudnn-cu12==9.1.0.70
+nvidia-cufft-cu12==11.2.1.3
+nvidia-curand-cu12==10.3.5.147
+nvidia-cusolver-cu12==11.6.1.9
+nvidia-cusparse-cu12==12.3.1.170
+nvidia-cusparselt-cu12==0.6.2
+nvidia-nccl-cu12==2.21.5
+nvidia-nvjitlink-cu12==12.4.127
+nvidia-nvtx-cu12==12.4.127
+openai==1.78.1
+opencv-python-headless==4.11.0.86
+opentelemetry-api==1.26.0
+opentelemetry-exporter-otlp==1.26.0
+opentelemetry-exporter-otlp-proto-common==1.26.0
+opentelemetry-exporter-otlp-proto-grpc==1.26.0
+opentelemetry-exporter-otlp-proto-http==1.26.0
+opentelemetry-proto==1.26.0
+opentelemetry-sdk==1.26.0
+opentelemetry-semantic-conventions==0.47b0
+opentelemetry-semantic-conventions-ai==0.4.8
+outlines==0.1.11
+outlines_core==0.1.26
+overrides @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/overrides/overrides-7.7.0
+packaging @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/packaging/packaging-23.2
+pandas @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/pandas/pandas-2.1.3
+pandocfilters @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/pandocfilters/pandocfilters-1.5.1
+parso @ file:///data/temporary/eb-build/jedi/0.19.1/GCCcore-13.2.0/parso/parso-0.8.3
+partial-json-parser==0.2.1.1.post5
+pastel @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/pastel-0.2.1-py2.py3-none-any.whl#sha256=4349225fcdf6c2bb34d483e523475de5bb04a5c10ef711263452cb37d7dd4364
+pathlib2 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pathlib2/pathlib2-2.3.7.post1
+pathspec @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/pathspec/pathspec-0.11.2
+pbr @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pbr/pbr-5.11.1
+pexpect @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pexpect/pexpect-4.8.0
+pickleshare @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/pickleshare/pickleshare-0.7.5
+pillow @ file:///data/temporary/eb-build/PillowSIMD/10.4.0/GCCcore-13.2.0/pillow-simd-10.4.0
+pkginfo @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pkginfo/pkginfo-1.9.6
+platformdirs @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/platformdirs/platformdirs-3.11.0
+pluggy @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/pluggy/pluggy-1.3.0
+ply @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/ply/ply-3.11
+pooch @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pooch/pooch-1.8.0
+prometheus-client @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/prometheus_client/prometheus_client-0.20.0
+prometheus-fastapi-instrumentator==7.1.0
+prompt-toolkit @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/prompt_toolkit/prompt_toolkit-3.0.41
+propcache==0.3.1
+proto-plus==1.26.1
+protobuf @ file:///data/temporary/eb-build/protobufpython/4.25.3/GCCcore-13.2.0/protobuf-4.25.3
+psutil @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/psutil/psutil-5.9.6
+ptyprocess @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/ptyprocess-0.7.0-py2.py3-none-any.whl#sha256=4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35
+pure-eval @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/pure_eval/pure_eval-0.2.2
+py @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/py/py-1.11.0
+py-cpuinfo==9.0.0
+py-expression-eval @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/py_expression_eval/py_expression_eval-0.3.14
+pyarrow==20.0.0
+pyasn1 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pyasn1/pyasn1-0.5.0
+pyasn1_modules==0.4.2
+pybind11 @ file:///data/temporary/eb-build/pybind11/2.11.1/GCCcore-13.2.0/pybind11-2.11.1
+pycountry==24.6.1
+pycparser @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pycparser/pycparser-2.21
+pycryptodome @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pycryptodome/pycryptodome-3.19.0
+pydantic==2.11.4
+pydantic_core==2.33.2
+pydevtool @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pydevtool/pydevtool-0.3.0
+Pygments @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/Pygments/Pygments-2.16.1
+pylev @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pylev/pylev-1.4.0
+PyNaCl @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/PyNaCl/PyNaCl-1.5.0
+pyparsing @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pyparsing/pyparsing-3.1.1
+pyrsistent @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pyrsistent/pyrsistent-0.20.0
+pytest @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pytest/pytest-7.4.3
+pytest-xdist @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pytestxdist/pytest-xdist-3.3.1
+python-dateutil @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pythondateutil/python-dateutil-2.8.2
+python-dotenv==1.1.0
+python-json-logger @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/pythonjsonlogger/python-json-logger-2.0.7
+python-multipart==0.0.20
+pythran @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/pythran/pythran-0.14.0
+pytoml @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pytoml/pytoml-0.1.21
+pytz @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/pytz/pytz-2023.3.post1
+PyYAML @ file:///data/temporary/eb-build/PyYAML/6.0.1/GCCcore-13.2.0/PyYAML-6.0.1
+pyzmq @ file:///data/temporary/eb-build/PyZMQ/25.1.2/GCCcore-13.2.0/pyzmq-25.1.2
+rapidfuzz @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/rapidfuzz/rapidfuzz-2.15.2
+ray==2.46.0
+referencing @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/referencing/referencing-0.35.1
+regex @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/regex/regex-2023.10.3
+reka-api==3.2.0
+requests @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/requests/requests-2.31.0
+requests-toolbelt @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/requeststoolbelt/requests-toolbelt-1.0.0
+rfc3339-validator @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/rfc3339_validator/rfc3339_validator-0.1.4
+rfc3986-validator @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/rfc3986_validator/rfc3986_validator-0.1.1
+rich @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/rich/rich-13.6.0
+rich-click @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/richclick/rich-click-1.7.0
+rich-toolkit==0.14.6
+rpds-py @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/rpds_py/rpds_py-0.18.1
+rsa==4.9.1
+safetensors==0.5.3
+scandir @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/scandir/scandir-1.10.0
+scipy==1.11.4
+SecretStorage @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/SecretStorage/SecretStorage-3.3.3
+semantic-version @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/semantic_version/semantic_version-2.10.0
+Send2Trash @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/Send2Trash/Send2Trash-1.8.3
+sentencepiece==0.2.0
+setuptools-scm @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/setuptoolsscm/setuptools-scm-8.0.4
+shellingham @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/shellingham/shellingham-1.5.4
+simplegeneric @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/simplegeneric/simplegeneric-0.8.1
+simplejson @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/simplejson/simplejson-3.19.2
+six @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/six/six-1.16.0
+sniffio @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/sniffio/sniffio-1.3.1
+snowballstemmer @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/snowballstemmer/snowballstemmer-2.2.0
+sortedcontainers @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sortedcontainers/sortedcontainers-2.4.0
+soupsieve @ file:///data/temporary/eb-build/BeautifulSoup/4.12.2/GCCcore-13.2.0/soupsieve/soupsieve-2.5
+Sphinx @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinx/sphinx-7.2.6
+sphinx-bootstrap-theme @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxbootstraptheme/sphinx-bootstrap-theme-0.8.1
+sphinxcontrib-applehelp @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_applehelp/sphinxcontrib_applehelp-1.0.7
+sphinxcontrib-devhelp @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_devhelp/sphinxcontrib_devhelp-1.0.5
+sphinxcontrib-htmlhelp @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_htmlhelp/sphinxcontrib_htmlhelp-2.0.4
+sphinxcontrib-jsmath @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontribjsmath/sphinxcontrib-jsmath-1.0.1
+sphinxcontrib-qthelp @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_qthelp/sphinxcontrib_qthelp-1.0.6
+sphinxcontrib-serializinghtml @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_serializinghtml/sphinxcontrib_serializinghtml-1.1.9
+sphinxcontrib-websupport @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/sphinxcontrib_websupport/sphinxcontrib_websupport-1.2.6
+stack-data @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/stack_data/stack_data-0.6.3
+starlette==0.46.2
+sympy @ file:///data/temporary/eb-build/sympy/1.13.1/gfbf-2023b/sympy-1.13.1
+tabulate @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/tabulate/tabulate-0.9.0
+tenacity==9.1.2
+termcolor==3.1.0
+terminado @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/terminado/terminado-0.18.1
+threadpoolctl @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/threadpoolctl/threadpoolctl-3.2.0
+tiktoken==0.9.0
+tinycss2 @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/tinycss2/tinycss2-1.3.0
+together==1.5.8
+tokenizers==0.21.1
+toml @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/toml/toml-0.10.2
+tomli @ file:///data/temporary/eb-build/hatchling/1.18.0/GCCcore-13.2.0/tomli/tomli-2.0.1
+tomli_w @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/tomli_w/tomli_w-1.0.0
+tomlkit @ file:///home/eb/.local/easybuild/sources/p/Python-bundle-PyPI/extensions/tomlkit-0.12.1-py3-none-any.whl#sha256=712cbd236609acc6a3e2e97253dfc52d4c2082982a88f61b640ecf0817eab899
+torch @ file:///data/temporary/eb-build/PyTorch/2.6.0/foss-2023b-CUDA-12.4.0/pytorch-v2.6.0
+torchaudio==2.6.0
+torchvision @ file:///data/temporary/eb-build/torchvision/0.21.0/foss-2023b-CUDA-12.4.0/vision-0.21.0
+tornado @ file:///data/temporary/eb-build/tornado/6.4/GCCcore-13.2.0/tornado-6.4
+tqdm==4.67.1
+traitlets @ file:///data/temporary/eb-build/IPython/8.17.2/GCCcore-13.2.0/traitlets/traitlets-5.13.0
+transformers==4.51.3
+triton @ file:///data/temporary/eb-build/Triton/3.1.1/foss-2023b-CUDA-12.4.0/triton/python
+trove-classifiers @ file:///home/eb/.local/easybuild/sources/h/hatchling/extensions/trove_classifiers-2023.10.18-py3-none-any.whl#sha256=20a3da8e3cb65587cc9f5d5b837bf74edeb480bba9bd8cd4f03ab056d6b06c4c
+typer==0.15.3
+types-requests==2.32.0.20250328
+typing-inspection==0.4.0
+typing_extensions @ file:///data/temporary/eb-build/typingextensions/4.11.0/GCCcore-13.2.0/typing_extensions-4.11.0
+tzdata @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/tzdata/tzdata-2023.3
+ujson @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/ujson/ujson-5.8.0
+uritemplate==4.1.1
+urllib3 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/urllib3/urllib3-2.0.7
+uvicorn==0.34.2
+uvloop==0.21.0
+versioneer @ file:///data/temporary/eb-build/SciPybundle/2023.11/gfbf-2023b/versioneer/versioneer-0.29
+virtualenv @ file:///data/temporary/eb-build/virtualenv/20.24.6/GCCcore-13.2.0/virtualenv/virtualenv-20.24.6
+vllm==0.8.5.post1
+watchfiles==1.0.5
+wcwidth @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/wcwidth/wcwidth-0.2.8
+webencodings @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/webencodings/webencodings-0.5.1
+websocket-client @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/websocket_client/websocket_client-1.8.0
+websockets==15.0.1
+widgetsnbextension @ file:///data/temporary/eb-build/jupyterserver/2.14.0/GCCcore-13.2.0/widgetsnbextension/widgetsnbextension-4.0.10
+wrapt==1.17.2
+xformers @ file:///data/temporary/eb-build/xformers/0.0.29.post3/foss-2023b-CUDA-12.4.0/xformers-0.0.29.post3
+xgrammar==0.1.18
+xlrd @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/xlrd/xlrd-2.0.1
+xxhash==3.5.0
+yarl==1.20.0
+z3-solver @ file:///data/temporary/eb-build/Z3/4.13.0/GCCcore-13.2.0/z3solver/z3-solver-4.13.0.0
+zipfile36 @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/zipfile36/zipfile36-0.1.3
+zipp @ file:///data/temporary/eb-build/PythonbundlePyPI/2023.10/GCCcore-13.2.0/zipp/zipp-3.17.0

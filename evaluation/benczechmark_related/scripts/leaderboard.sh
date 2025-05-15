@@ -17,6 +17,6 @@ echo $(pwd)
 
 export PYTHONPATH=$(pwd)
 
-MODEL_ID="b->cp_(cs+en)+it_(cs+en-alpaca+dolly)"
+MODEL_ID="b+it->it_(cs+en-alpaca+dolly)"
 
 python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/results/${MODEL_ID}/eval_${MODEL_ID}*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/submissions/${MODEL_ID}_submission.json

@@ -13,6 +13,6 @@ source ~/venvs/benczechmark/bin/activate
 
 export PYTHONPATH=src:$PYTHONPATH
 
-source ~/master-thesis-repository-tomas-mlynar/benczechmark_related/TASKS.sh
+source ~/master-thesis-repository-tomas-mlynar/evaluation/benczechmark_related/TASKS.sh
 
-sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_thesis_model.sh
+sbatch --array=0-$((${#TASKS[@]} - 1))  ~/master-thesis-repository-tomas-mlynar/evaluation/benczechmark_related/scripts/eval_thesis_model.sh

@@ -8,8 +8,8 @@
 #SBATCH --job-name benczechmark_eval
 #SBATCH --output logs/benczechmark/bcm-thesis_model.%j.out
 
-NAME='b+it->it_(cs+en-alpaca+dolly)'
-MODEL_NAME='/mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-Instruct-mix_11_cs_en_alpaca_dolly/merge_16bit'
+NAME='b+it->it_(cs+en-alpaca+dolly)' #final name of the model
+MODEL_NAME='/mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-Instruct-mix_11_cs_en_alpaca_dolly/merge_16bit' # path to the currently tested model
 
 echo "Running evaluation for model: $MODEL_NAME"
 
@@ -24,8 +24,8 @@ source ~/venvs/benczechmark/bin/activate
 
 export PYTHONPATH=src:$PYTHONPATH
 
-source ~/master-thesis-repository-tomas-mlynar/benczechmark_related/TASKS.sh
-source ~/master-thesis-repository-tomas-mlynar/benczechmark_related/NUM_SHOT.sh
+source ~/master-thesis-repository-tomas-mlynar/evaluation/benczechmark_related/TASKS.sh
+source ~/master-thesis-repository-tomas-mlynar/evaluation/benczechmark_related/NUM_SHOT.sh
 
 export CACHE_NAME="realrun_benczechmark_${NAME}_cache_${TASKS[$SLURM_ARRAY_TASK_ID]}"
 
@@ -33,7 +33,7 @@ echo "SLURM_ARRAY_TASK_ID: $SLURM_ARRAY_TASK_ID"
 echo "Executing TASK: ${TASKS[$SLURM_ARRAY_TASK_ID]}"
 
 # Set run script
-SCRIPT="/home/mlynatom/master-thesis-repository-tomas-mlynar/benczechmark_related/script/eval_vllm.sh"
+SCRIPT="/home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation/benczechmark_related/scripts/eval_vllm.sh"
 SUM_LOGP_FLAG="no"
 for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
@@ -45,8 +45,8 @@ for task in "${SUM_LOGPROBS[@]}"; do
   fi
 done
 
-OUTPUT_PATH="bcm/results/${NAME}/eval_${NAME}_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}"
-LOGFILE="bcm/logs_benczechmark/eval_${NAME}_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}.log"
+OUTPUT_PATH="evaluation_results/bcm/results/${NAME}/eval_${NAME}_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}"
+LOGFILE="evaluation_results/bcm/logs_benczechmark/eval_${NAME}_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}.log"
 
 set -x # enables a mode of the shell where all executed commands are printed to the terminal
 # Run the script with the task specified by SLURM_ARRAY_TASK_ID
