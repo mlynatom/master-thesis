@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --partition cpu
+#SBATCH --partition cpufast
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --time 12:00:00
+#SBATCH --time 1:00:00
 #SBATCH --job-name benczechmark_eval_cpu
 #SBATCH --output logs/benczechmark-logs-leaderboard.%j.out
 
@@ -17,6 +17,6 @@ echo $(pwd)
 
 export PYTHONPATH=$(pwd)
 
-MODEL_ID="b+it->it_(cs+en-alpaca+dolly)"
+MODEL_ID="b->nli_(cs+en)"
 
-python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/results/${MODEL_ID}/eval_${MODEL_ID}*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/bcm/submissions/${MODEL_ID}_submission.json
+python /home/mlynatom/benczechmark-leaderboard/leaderboard/compile_log_files.py -i "/home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation_results/bcm/results/${MODEL_ID}/eval_${MODEL_ID}*" -o /home/mlynatom/master-thesis-repository-tomas-mlynar/evaluation_results/bcm/submissions/${MODEL_ID}_submission.json

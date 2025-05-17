@@ -8,8 +8,8 @@
 #SBATCH --job-name benczechmark_eval
 #SBATCH --output logs/benczechmark/bcm-thesis_model.%j.out
 
-NAME='b+it->it_(cs+en-alpaca+dolly)' #final name of the model
-MODEL_NAME='/mnt/personal/mlynatom/thesis_models/it-Llama-3.1-8B-Instruct-mix_11_cs_en_alpaca_dolly/merge_16bit' # path to the currently tested model
+NAME='b->nli_(cs+en)' #final name of the model
+MODEL_NAME='/mnt/personal/mlynatom/thesis_models/nli-Llama-3.1-8B-Instruct-factcheck_collection_cs_en/merge_16bit' # path to the currently tested model
 
 echo "Running evaluation for model: $MODEL_NAME"
 
