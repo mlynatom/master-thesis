@@ -2,6 +2,8 @@
 
 This repository contains all code, experiments, and documentation related to the master thesis of Tomáš Mlynář. The project focuses on the adaptation large language models (LLMs), their training, evaluation, and benchmarking, with a particular emphasis on Czech language resources and evaluation frameworks.
 
+## 🤗 Hugging Face Collection
+All published models and datasets are available on [Hugging Face Hub](https://huggingface.co/collections/ctu-aic/llm-adaptation-to-czech-language-6827770d79ec2864247e3ede)
 ## Table of Contents
 
 - [Project Structure](#project-structure)
